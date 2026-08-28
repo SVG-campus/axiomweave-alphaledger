@@ -120,6 +120,9 @@ UnsetEnvironment=APCA_API_KEY_ID APCA_API_SECRET_KEY ALPACA_API_KEY ALPACA_SECRE
 WantedBy=multi-user.target
 UNIT
 
+install -d -o root -g root -m 0755 /etc/systemd/system/alphaledger-demo.service.d
+install -o root -g root -m 0644 +  "$APP_ROOT/deploy/gcp/alphaledger-demo-hardening.conf" +  /etc/systemd/system/alphaledger-demo.service.d/hardening.conf
+
 cat >/etc/systemd/system/alphaledger-runner.service <<'UNIT'
 [Unit]
 Description=AxiomWeave AlphaLedger paper competition controller

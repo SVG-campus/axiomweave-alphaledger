@@ -14,6 +14,8 @@ paper-enable flag are absent, and the three secret containers have no user-suppl
 - One non-preemptible `e2-micro` in `us-central1-a`, 20 GB standard disk.
 - A new custom `alphaledger-net-*` VPC/subnet; no existing network or firewall is modified.
 - Public Nginx → local Streamlit demo. The demo service has no broker environment variables.
+- The public demo service is network-isolated to localhost, blocking metadata and external egress;
+  only Nginx can reach its local Streamlit listener.
 - Separate non-login runner user and systemd service.
 - Three new Secret Manager secrets, scoped to one dedicated service account.
 - Official Alpaca CLI v0.0.14 pinned by SHA-256.
