@@ -6,8 +6,10 @@ Compute service account existed. The scripts use only new `alphaledger-*` names.
 
 Current deployment: `alphaledger-hackathon-20260828` is serving the credential-free demo at
 <http://34.27.11.180> from public commit
-`3f9bcc021b533a3057b5c8aca3e02d5efa8e7020`. The runner is disabled, `runner.env` and the
-paper-enable flag are absent, and the three secret containers have no user-supplied versions.
+`5a97562ee4f710e7fa7d9a9f15033fe1c1d3f6af`. The runner is active in GET-only `observe` mode
+after successful reconciliation of the fresh $100,000 Level-3 account with zero positions and
+orders. The paper-enable flag is absent, and each of the three secret containers has exactly one
+enabled version.
 
 ## Architecture
 
