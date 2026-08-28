@@ -34,8 +34,9 @@ the frozen $10 soft budget even without the VM-hours benefit, barring unusual eg
 2. Run `provision.ps1 -RepositoryUrl <public-url> -RepositoryRef <commit-sha>`.
 3. Verify the public demo from a signed-out browser.
 4. Run `set-paper-secrets.ps1` locally. Never paste keys into chat.
-5. Run `start-observe.ps1`. Inspect redacted logs and prove the account is the pinned fresh
-   $100,000 Level-3 paper account with no positions/orders.
+5. Run `start-observe.ps1`. Inspect redacted logs and prove the user-visible `PA...` paper account
+   number is the pinned fresh $100,000 Level-3 paper account with no positions/orders. Alpaca's API
+   `id` is a separate internal UUID and is not the LabLab/dashboard account reference.
 6. Only after explicit paper-order authorization, run `activate-paper.ps1`. It may be run over the
    weekend: the competition clock remains pre-window until Monday 09:30 ET and entries remain
    disabled until 10:20 ET.

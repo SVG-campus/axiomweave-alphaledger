@@ -89,7 +89,7 @@ if ($ValidateOnly) {
 
 $ApiKey = Read-Host 'Alpaca PAPER API key (input hidden)' -AsSecureString
 $ApiSecret = Read-Host 'Alpaca PAPER API secret (input hidden)' -AsSecureString
-$AccountId = Read-Host 'Expected new PAPER account ID (input hidden)' -AsSecureString
+$AccountId = Read-Host 'Expected new PAPER account number shown next to Paper Account (input hidden)' -AsSecureString
 Add-SecretVersionWithoutEcho 'alphaledger-paper-api-key-20260828' $ApiKey
 Add-SecretVersionWithoutEcho 'alphaledger-paper-api-secret-20260828' $ApiSecret
 Add-SecretVersionWithoutEcho 'alphaledger-paper-account-id-20260828' $AccountId

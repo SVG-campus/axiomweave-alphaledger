@@ -41,7 +41,8 @@ risk without promoted alpha evidence.
 ## Alpaca infrastructure
 
 AlphaLedger uses Alpaca's official CLI and documented `mleg` order shape in the paper environment.
-The controller pins a SHA-256 digest of the exact new account ID and requires an ACTIVE account,
+The controller pins a SHA-256 digest of the exact user-visible `PA...` paper account number and
+requires an ACTIVE account,
 exactly $100,000 fresh equity/cash, Level 3 options permission, and no starting positions or orders.
 Every later cycle reconciles the exact option symbols, signed quantities, and deterministic client
 order IDs owned by AlphaLedger. A process lock enforces one writer. State writes are atomic; the

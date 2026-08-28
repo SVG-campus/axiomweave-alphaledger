@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import unittest
 from datetime import datetime, timezone
@@ -43,6 +44,7 @@ class FakeGetTransport:
             "account_blocked": False,
             "trade_suspended_by_user": False,
             "id": "must-not-enter-receipt",
+            "account_number": "must-not-enter-receipt-pa-number",
         }
         self.positions = positions if positions is not None else []
         self.orders = orders if orders is not None else []
@@ -121,12 +123,29 @@ class AlpacaReadOnlyObserverTests(unittest.TestCase):
         self.assertNotIn("paper-test-id", serialized)
         self.assertNotIn("paper-test-secret", serialized)
         self.assertNotIn("must-not-enter-receipt", serialized)
+        self.assertNotIn("must-not-enter-receipt-pa-number", serialized)
         self.assertEqual(len(receipt.account_ref_sha256), 64)
         self.assertNotIn("paper-test-id", repr(credentials))
         self.assertNotIn("paper-test-secret", repr(credentials))
         account_state = receipt.to_account_state()
         self.assertEqual(account_state.broker_mode, "paper")
         self.assertEqual(account_state.open_orders, 0)
+
+    def test_reconciliation_pins_user_visible_account_number_not_api_uuid(self) -> None:
+        account = FakeGetTransport().account.copy()
+        account["id"] = "internal-api-uuid"
+        account["account_number"] = "PA-USER-VISIBLE-NUMBER"
+
+        receipt = self._observer(FakeGetTransport(account=account)).reconcile()
+
+        self.assertEqual(
+            receipt.account_ref_sha256,
+            hashlib.sha256(account["account_number"].encode("utf-8")).hexdigest(),
+        )
+        self.assertNotEqual(
+            receipt.account_ref_sha256,
+            hashlib.sha256(account["id"].encode("utf-8")).hexdigest(),
+        )
 
     def test_positions_open_orders_or_low_options_level_fail_readiness(self) -> None:
         account = FakeGetTransport().account.copy()

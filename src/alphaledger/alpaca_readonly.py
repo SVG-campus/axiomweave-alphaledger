@@ -425,7 +425,8 @@ class AlpacaReadOnlyObserver:
             raise RuntimeError("Alpaca open-orders response must be a JSON array")
 
         account = account_response.payload
-        account_id = str(account.get("id", "")).strip()
+        api_account_id = str(account.get("id", "")).strip()
+        account_number = str(account.get("account_number", "")).strip()
         equity = _finite_float(account.get("equity"), "equity")
         last_equity = _finite_float(account.get("last_equity"), "last_equity")
         cash = _finite_float(account.get("cash"), "cash")
@@ -441,8 +442,10 @@ class AlpacaReadOnlyObserver:
         reasons: list[str] = []
         if account_status != "ACTIVE":
             reasons.append("Paper account status is not ACTIVE.")
-        if not account_id:
-            reasons.append("Paper account identifier is missing.")
+        if not api_account_id:
+            reasons.append("Paper account API identifier is missing.")
+        if not account_number:
+            reasons.append("Paper account number is missing.")
         if trading_blocked:
             reasons.append("Paper account has an active trading restriction.")
         if approved_level < 3 or trading_level < 3:
@@ -483,7 +486,11 @@ class AlpacaReadOnlyObserver:
                 positions_response.endpoint,
                 orders_response.endpoint,
             ),
-            account_ref_sha256=hashlib.sha256(account_id.encode("utf-8")).hexdigest()
-            if account_id
+            # LabLab and Alpaca's dashboard identify the competition account by
+            # the user-visible PA... account number. Alpaca's API also returns a
+            # separate internal UUID in `id`; requiring both fields while pinning
+            # the account number avoids silently binding the wrong identifier.
+            account_ref_sha256=hashlib.sha256(account_number.encode("utf-8")).hexdigest()
+            if account_number
             else "",
         )

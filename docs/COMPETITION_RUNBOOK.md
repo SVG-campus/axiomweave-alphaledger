@@ -8,8 +8,8 @@ position/order, live endpoint, missing evidence, secret exposure, second writer,
 1. Run `python .\scripts\verify.py`; require exit 0 and a fresh verification receipt.
 2. Publish one reviewed commit and deploy that immutable commit.
 3. Verify the public demo signed out; confirm it contains no account ID, credentials, or order path.
-4. Run `deploy\gcp\set-paper-secrets.ps1` locally. Enter the paper API key, secret, and new account
-   ID only in hidden prompts.
+4. Run `deploy\gcp\set-paper-secrets.ps1` locally. Enter the paper API key, secret, and the new
+   user-visible `PA...` paper account number only in hidden prompts.
 5. Run `deploy\gcp\start-observe.ps1`.
 6. In redacted logs require: paper host, ACTIVE, $100,000 fresh baseline, Level 3, no positions, no
    open orders, exact account pin, fresh SPY data, and one writer.
