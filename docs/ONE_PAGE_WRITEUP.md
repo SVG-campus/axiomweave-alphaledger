@@ -33,9 +33,10 @@ The frozen competition policy permits one open plan and one entry per session, w
 Mon–Thu from 10:20–14:30 ET. Maximum plan loss and aggregate open risk are $250; the daily loss stop
 is $500; the total drawdown stop is $1,000; the maximum hold is 45 minutes; take-profit and stop-loss
 triggers are +25% and −20% of premium. The controller force-closes and reconciles positions by Thu
-Sep 3 at 15:45 ET. The organizer confirmed a raw-equity snapshot Fri at 09:30 ET but has not yet
-specified pre-open option marking or Thursday-expiry settlement, so holding through the cutoff is
-disabled.
+Sep 3 at 15:45 ET. Erika (Alpaca) confirmed that portfolio total equity as of EOD Thursday is the
+scoring basis and that exercise and assignment for options expiring Sep 3 are reflected in that EOD
+value. Holding through expiry remains disabled because it adds mark, assignment, and operational
+risk without promoted alpha evidence.
 
 ## Alpaca infrastructure
 
@@ -56,6 +57,6 @@ then may enter GET-only observe mode. Paper-order mode requires the exact human 
 ## Evidence ceiling
 
 Passing local verification establishes C1 deterministic mechanics and falsifiers, not profitability
-or production safety. Authenticated organizer screenshots support the C2 timing observation.
-Profitability, fills, Friday option values, and winning probability remain C0. No authenticated
+or production safety. Authenticated organizer screenshots support the C2 timing and EOD scoring
+observations. Profitability, fills, broker mark construction, and winning probability remain C0. No authenticated
 broker request or paper order was sent during development or verification.

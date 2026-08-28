@@ -31,6 +31,7 @@ streamlit run app.py
 The private runner is a single-writer state machine around the official organizer window:
 
 - P&L measurement: **Mon Aug 31, 09:30 ET–Fri Sep 4, 09:30 ET**.
+- Organizer scoring basis: **portfolio total equity as of EOD Thu Sep 3**.
 - New-entry window: **Mon–Thu, 10:20–14:30 ET**.
 - Default force-flat: **Thu Sep 3, 15:45 ET**.
 - Underlying: SPY; one open plan; one entry per day.
@@ -43,9 +44,10 @@ baseline, Level 3 options permission, zero positions/orders, paper endpoints, an
 ownership. It submits only same-expiration 1:1 call or put debit spreads through the official
 Alpaca CLI. Pending and closing orders are reconciled by deterministic client IDs.
 
-The organizer confirmed a Friday 09:30 ET **raw-equity snapshot** but has not yet clarified how an
-open option is marked before the Friday options session or whether Thursday exercise/assignment
-settlement will have posted. The hold-through-cutoff override therefore remains disabled.
+Erika (Alpaca) confirmed that judges will use portfolio **total equity as of EOD Thursday Sep 3**
+and that exercise and assignment for options expiring that day will be reflected in the EOD value.
+AlphaLedger still force-flattens at 15:45 ET: holding through expiry adds mark, assignment, and
+operational risk without promoted alpha evidence.
 
 ## Signal evidence—promotion refused
 
@@ -87,7 +89,8 @@ or an invalid clock phase all fail closed.
 
 - **C1:** local deterministic mechanics, negative controls, replay integrity, app rendering, and
   broker-command construction after `scripts/verify.py` passes.
-- **C2:** organizer timing and raw-equity wording preserved as authenticated screenshot hashes.
+- **C2:** organizer timing, EOD-Thursday scoring basis, and expiry treatment preserved as
+  authenticated screenshot hashes.
 - **C0:** profitability, future fills, mark quality, competition rank, and production safety.
 
 No broker request or order was sent while building or verifying this repository.

@@ -4,7 +4,7 @@
 |---|---|---|---|---|
 | S1 | Authenticated LabLab event page, 2026-08-28 | challenge, options requirement, new $100k account, criteria, prizes, submission fields | C2 | Dynamic platform observation; recheck before submit |
 | S2 | `evidence/organizer-pnl-window-discord.png` + SHA-256 in decision JSON | Mon Aug 31 09:30 ET–Fri Sep 4 09:30 ET P&L window; new account | C2 | Authenticated organizer observation, not an API contract |
-| S3 | `evidence/organizer-raw-equity-snapshot-discord.png` + SHA-256 in decision JSON | final result described as raw equity snapshot | C2 | Does not resolve pre-open option marks or Thursday settlement |
+| S3 | `evidence/organizer-raw-equity-snapshot-discord.png` + SHA-256 in decision JSON | preliminary raw-equity wording | C2 | Superseded by the fuller S11 clarification |
 | S4 | [LabLab submission guidance](https://lablab.ai/delivering-your-hackathon-solution) | required artifacts and form workflow | C2 | General guidance can be overridden by event form |
 | S5 | [LabLab hackathon rules](https://lablab.ai/hackathon-rules) | teams, conduct, prize/eligibility boundary | C2 | Legal eligibility remains the participant's responsibility |
 | S6 | [LabLab how-to-win guide](https://lablab.ai/guide/how-to-win-an-ai-hackathon) | pitch structure, working demo, rubric alignment | C2 | Advice, not a winning guarantee |
@@ -12,15 +12,16 @@
 | S8 | [Official Alpaca multi-leg docs](https://docs.alpaca.markets/us/docs/options-level-3-trading) | `mleg` order shape and Level 3 requirement | C2 | Broker acceptance/fills still require authenticated paper observation |
 | S9 | Local `scripts/verify.py` receipt | deterministic mechanics and negative controls | C1 | Does not establish broker connectivity, alpha, profit, or future safety |
 | S10 | Current event team pages, 2026-08-28 | competitor wording patterns | C2 for page text | Dynamic, incomplete, and not evidence of product quality |
+| S11 | `evidence/organizer-eod-thursday-equity-discord.png` + SHA-256 in decision JSON | EOD Thursday total equity is scored; Sep 3 expiry exercise/assignment is reflected | C2 | Organizer protocol statement, not independent broker-mechanics verification; cash-settled index options not addressed |
 
 ## Frozen claims
 
-- **C2:** The official scoring window and raw-equity language are organizer observations preserved
-  with screenshot hashes.
+- **C2:** The official window, EOD-Thursday total-equity scoring basis, and stated treatment of Sep 3
+  exercise/assignment are organizer observations preserved with screenshot hashes.
 - **C1:** AlphaLedger's deterministic clock, normalizers, risk gates, locked official-CLI adapter,
   state ownership, and replay controls execute locally under tests.
-- **C0:** Expected profit, likelihood of winning, true options alpha, future fill quality, Friday
-  option marking, and Thursday-expiry settlement behavior remain unproven.
+- **C0:** Expected profit, likelihood of winning, true options alpha, future fill quality, broker mark
+  construction, and cash-settled index-option timing remain unproven.
 
 ## Falsifiers and stop rules
 

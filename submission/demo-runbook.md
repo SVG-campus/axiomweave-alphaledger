@@ -35,8 +35,8 @@ No Alpaca or OpenAI credentials are needed for the public simulation path.
    Alpaca surface and frozen IEX + indicative bridge check showing PASS/$20.
 5. **Replay & controls:** identify the retained equity baseline as a negative
    control—not an options-profit claim.
-6. **AxiomWeave packet:** state the C1 mechanics ceiling, C2 organizer-window evidence, and
-   unresolved Friday option-marking/settlement question.
+6. **AxiomWeave packet:** state the C1 mechanics ceiling and C2 organizer evidence that judges use
+   EOD Thursday total equity and include Sep 3 expiry exercise/assignment.
 
 ## 4. Optional structured OpenAI adviser
 

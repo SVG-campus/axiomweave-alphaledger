@@ -28,7 +28,8 @@ minutes and file size under 300 MB.
 > fourth at 9:30. One exclusive writer pins the exact fresh one-hundred-thousand-dollar Level 3
 > paper account. It allows one SPY spread attempt per day, risks at most two hundred fifty dollars,
 > stops at five hundred dollars daily or one thousand total drawdown, and forces flat Thursday at
-> 3:45 because Friday's pre-open option marking is still unclear.
+> 3:45. Alpaca confirmed judges use total equity as of Thursday EOD and that Thursday-expiry
+> exercise and assignment are reflected. We flatten first to keep the scored state deterministic.
 
 > We also tested two bounded signal families. Neither passed its held-out promotion gate. The
 > dashboard says promotion refused, because local backtests are not proof of future profit.
@@ -69,7 +70,7 @@ minutes and file size under 300 MB.
 
 > The verified suite establishes C1 deterministic mechanics on frozen and Alpaca-shaped inputs.
 > Authenticated organizer screenshots establish C2 timing evidence. Profitability, future fills,
-> Friday option marks, and competition rank remain C0. We preserve the failed hourly and five-minute
+> broker mark construction, and competition rank remain C0. We preserve the failed hourly and five-minute
 > tests rather than tuning them away.
 
 ## 3:55–4:20 — Business value

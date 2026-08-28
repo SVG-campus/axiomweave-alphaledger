@@ -116,7 +116,8 @@ with competition_tab:
                 {"boundary": "Entry opens", "time": "Mon–Thu · 10:20 ET", "behavior": "one gated attempt/day"},
                 {"boundary": "Entry closes", "time": "Mon–Thu · 14:30 ET", "behavior": "exit only"},
                 {"boundary": "Force flat", "time": "Thu Sep 3 · 15:45 ET", "behavior": "close + reconcile"},
-                {"boundary": "Raw equity", "time": "Fri Sep 4 · 09:30 ET", "behavior": "record and stop"},
+                {"boundary": "Scored equity", "time": "Thu Sep 3 · EOD", "behavior": "organizer scoring basis"},
+                {"boundary": "Window ends", "time": "Fri Sep 4 · 09:30 ET", "behavior": "record and stop"},
             ],
             hide_index=True,
             width="stretch",
@@ -126,10 +127,10 @@ with competition_tab:
             "directional call/put spread → deterministic options gate → official Alpaca CLI → "
             "status reconciliation → hash-linked receipt."
         )
-        st.warning(
-            "Organizer wording confirms a raw-equity snapshot but does not yet resolve Friday "
-            "pre-open option marks or Thursday-expiry settlement. The hold-through-cutoff override "
-            "therefore remains disabled."
+        st.info(
+            "Erika (Alpaca) confirmed that portfolio total equity as of EOD Thursday is scored and "
+            "that Thursday-expiry exercise and assignment are reflected. AlphaLedger still forces "
+            "flat at 15:45 ET to avoid mark, assignment, and operational ambiguity."
         )
     with right:
         st.markdown("#### Frozen capital policy")
@@ -364,7 +365,8 @@ with ledger_tab:
 with evaluation_tab:
     st.subheader("Frozen evaluation and broker-observation boundaries")
     st.caption(
-        "The organizer window is fixed at Aug 31 09:30 ET through Sep 4 09:30 ET. "
+        "The published window is Aug 31 09:30 ET through Sep 4 09:30 ET; Erika confirmed that "
+        "portfolio total equity as of EOD Thursday Sep 3 is the scoring basis. "
         "Historical replay remains a mechanics control; real-time Alpaca observation is the "
         "competition route, with paper submission still separately locked."
     )

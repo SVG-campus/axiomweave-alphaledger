@@ -37,6 +37,6 @@ chat, or public demo.
 4. Record/upload the video and add final URLs to the form.
 5. Confirm any Discord/social post and the final LabLab submission at action time.
 
-The Discord watcher remains active for the unresolved Friday option-marking and Thursday-settlement
-question. Until a clear organizer answer is preserved, the controller force-flattens Thursday at
-15:45 ET.
+Erika's organizer clarification is preserved with a screenshot hash: EOD Thursday total equity is
+the scoring basis, and Sep 3 expiry exercise/assignment is reflected. The controller still
+force-flattens Thursday at 15:45 ET to keep the scored state deterministic.

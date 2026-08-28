@@ -13,8 +13,8 @@ position/order, live endpoint, missing evidence, secret exposure, second writer,
 5. Run `deploy\gcp\start-observe.ps1`.
 6. In redacted logs require: paper host, ACTIVE, $100,000 fresh baseline, Level 3, no positions, no
    open orders, exact account pin, fresh SPY data, and one writer.
-7. Recheck Discord for the option-marking/settlement answer. Keep Thursday force-flat unless an
-   unambiguous organizer answer is preserved and the policy is deliberately re-reviewed.
+7. Verify the preserved Erika clarification: EOD Thursday total equity is the scoring basis and
+   Sep 3 expiry exercise/assignment is reflected. Keep the 15:45 ET force-flat policy.
 8. At the final activation gate, type the exact acknowledgement only after reading the displayed
    warning: `I_UNDERSTAND_THIS_SUBMITS_A_PAPER_ORDER`.
 
@@ -40,6 +40,7 @@ does not allow a new entry before 10:20.
 
 ## Thursday Sep 3
 
+- Treat the portfolio's EOD total equity as the organizer-confirmed scoring basis.
 - Follow the same entry window, but never open a position that cannot be closed and reconciled before
   the force-flat boundary.
 - 15:30: stop all optional activity; inspect orders and positions.
@@ -49,9 +50,9 @@ does not allow a new entry before 10:20.
 
 ## Friday Sep 4
 
-- No new options session is available before scoring.
+- Scored equity is already based on EOD Thursday; do not attempt to change the score Friday morning.
 - 09:20: require flat positions/orders and intact journal; capture redacted account status.
-- 09:30: record the raw equity snapshot and stop the competition controller.
+- 09:30: record the window-end observation and stop the competition controller.
 - Do not submit a Friday trade after the measurement boundary.
 - LabLab submission deadline: 08:00 PDT / 11:00 ET. The form should already be complete and tested.
 

@@ -20,19 +20,22 @@ Erika, posting from the authenticated Alpaca organizer account in the event Disc
 
 > We start measuring P&L Mon Aug 31 -9:30 a.m. ET to Sep 4 9:30 am ET make sure to open a new account
 
-When asked whether Thursday-expiry settlement would be included or whether the result was a raw snapshot, Erika replied:
+An earlier short answer described a "raw equity snapshot." After the complete valuation question,
+Erika clarified at 11:46 a.m. Pacific:
 
-> hi raw equity snapshot
+> Official P&L measurement: Monday, August 31 at 9:30 a.m. ET to Friday, September 4 at 9:30 a.m.
+> ET. We will be looking at the portfolio’s total equity as of EOD Thursday Sep 3rd. Any option
+> exercises and assignments for options expiring on Sep 3rd will be reflected in the EOD value.
 
 The screenshots and hashes are preserved in `evidence/competition-window-decision.json`.
-These are C2 authenticated organizer observations. They establish the time window and raw-equity
-scoring language, but do not yet establish how Alpaca will mark an open option before the Friday
-options session or whether Thursday exercise, assignment, or cash settlement will have posted.
+These are C2 authenticated organizer observations. The later answer establishes EOD Thursday total
+equity as the scoring basis and says Thursday-expiry exercise and assignment are reflected. It does
+not independently document Alpaca's mark formula or cash-settled index-option processing.
 
-AlphaLedger therefore permits new entries Monday through Thursday and defaults to force-flat on
+AlphaLedger permits new entries Monday through Thursday and force-flattens on
 **Thursday 3 September at 3:45 p.m. ET**. It keeps enforcing/reconciling flat status through the
-Friday cutoff. A hold-through-cutoff override is disabled unless the organizer answers the open
-valuation question unambiguously.
+Friday cutoff. Holding through expiry remains disabled because AlphaLedger trades SPY and has no
+promoted alpha evidence that justifies extra mark, exercise, assignment, or operational risk.
 
 ## Prizes
 
@@ -101,6 +104,7 @@ used. AlphaLedger did not use IBM Bob, so it must not create or claim that repor
 
 - Active build and submission phase: **28 August–4 September 2026**.
 - Official P&L measurement: **31 August 9:30 a.m. ET–4 September 9:30 a.m. ET**.
+- Organizer scoring basis: **portfolio total equity as of EOD Thursday 3 September**.
 - New entry sessions available to regular options trading: Monday–Thursday only.
 - Official and community surfaces shown by the event include LabLab Discord, X, LinkedIn,
   Instagram, YouTube, Twitch, and website; Alpaca X, LinkedIn, GitHub, Slack, Forum, and website.

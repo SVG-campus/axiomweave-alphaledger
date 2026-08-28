@@ -406,7 +406,10 @@ class CompetitionAgent:
                     state,
                     now,
                     "complete",
-                    ("Final raw-equity observation recorded at or after the organizer cutoff.",),
+                    (
+                        "Window-end observation recorded; organizer scoring basis is portfolio "
+                        "total equity as of EOD Thursday.",
+                    ),
                     readiness.equity,
                 )
 

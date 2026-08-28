@@ -5,9 +5,10 @@
   "assumptions": [
     "Erika is speaking from an official Alpaca organizer account in the authenticated lablab.ai Discord.",
     "The account must be new and its competition starting balance must be set to exactly $100,000.",
-    "The final score is a raw account-equity snapshot at Friday 2026-09-04 09:30 America/New_York.",
-    "The options market has no regular-session opportunity before the Friday 09:30 cutoff.",
-    "The organizer has not yet specified how pre-open option marks or Thursday-expiry exercise, assignment, and settlement feed the raw-equity snapshot."
+    "The published measurement window remains Monday 2026-08-31 09:30 through Friday 2026-09-04 09:30 America/New_York.",
+    "Erika's later clarification makes portfolio total equity as of EOD Thursday 2026-09-03 the scoring basis.",
+    "Per Erika, exercise and assignment for options expiring Thursday 2026-09-03 are reflected in that EOD value.",
+    "The organizer statement does not independently establish Alpaca's mark calculation or cash-settled index-option processing, neither of which AlphaLedger relies on because it trades SPY and force-flattens before Thursday close."
   ],
   "options": [
     "trade continuously and keep all positions open through the cutoff",
@@ -31,6 +32,17 @@
       "captured_local_date": "2026-08-28",
       "question_context": "Will Thursday-expiry overnight cash settlement be included in the Sep 4 9:30 measurement, or is it a raw equity snapshot at that instant?",
       "exact_visible_reply": "hi raw equity snapshot",
+      "claim_grade": "C2 observational organizer evidence",
+      "status": "preliminary wording superseded by Erika's 11:46 a.m. clarification"
+    },
+    {
+      "source": "authenticated lablab.ai Discord screenshot of Erika (Alpaca)",
+      "path": "evidence/organizer-eod-thursday-equity-discord.png",
+      "sha256": "DC96A5164B4D6B2043A16B54305CE539318FACF9C49820D7B7944001DB80FFA1",
+      "captured_local_date": "2026-08-28",
+      "visible_author": "Erika (Alpaca)",
+      "visible_timestamp": "2026-08-28 11:46 America/Los_Angeles",
+      "transcription_with_participant_mention_redacted": "Hi [participant] Official P&L measurement: Monday, August 31 at 9:30 a.m. ET to Friday, September 4 at 9:30 a.m. ET. We will be looking at the portfolio’s total equity as of EOD Thursday Sep 3rd. Any option exercises and assignments for options expiring on Sep 3rd will be reflected in the EOD value.",
       "claim_grade": "C2 observational organizer evidence"
     },
     {
@@ -45,7 +57,7 @@
       "claim_grade": "C2 authenticated platform observation"
     }
   ],
-  "decision": "Run one deterministic controller against the new $100,000 paper account. Evaluate from Monday 09:30 ET, permit at most one C0 exploratory entry from 10:20 through 14:30 ET on Monday through Thursday, close within 45 minutes unless a smaller profit or loss boundary fires first, and make Thursday 15:45 ET the default forced-flat deadline. A hold-through-cutoff path remains disabled unless the organizer or a reproducible paper-account probe resolves option marking and Thursday-expiry settlement without ambiguity.",
+  "decision": "Run one deterministic controller against the new $100,000 paper account. Evaluate from Monday 09:30 ET, permit at most one C0 exploratory entry from 10:20 through 14:30 ET on Monday through Thursday, close within 45 minutes unless a smaller profit or loss boundary fires first, and make Thursday 15:45 ET the forced-flat deadline. Treat EOD Thursday total equity as the organizer-confirmed scoring basis. Keep hold-through-expiry disabled because it adds mark, exercise, assignment, and operational risk without promoted alpha evidence.",
   "competition_window": {
     "start_utc": "2026-08-31T13:30:00Z",
     "end_utc": "2026-09-04T13:30:00Z",
@@ -56,10 +68,12 @@
       "2026-09-02",
       "2026-09-03"
     ],
+    "organizer_scoring_basis": "portfolio total equity as of EOD Thursday 2026-09-03",
+    "thursday_expiry_exercise_assignment_reflected": true,
     "default_force_flat_utc": "2026-09-03T19:45:00Z",
     "friday_regular_session_eligible": false
   },
-  "objective": "Maximize expected raw-equity P&L during the frozen window while preserving account survival, reproducibility, and a judge-visible proof trail.",
+  "objective": "Maximize expected portfolio total equity at EOD Thursday during the frozen window while preserving account survival, reproducibility, and a judge-visible proof trail.",
   "risk_budget": {
     "starting_equity_usd": 100000,
     "maximum_loss_per_plan_usd": 250,
@@ -79,7 +93,7 @@
     "The account is not new, is not at $100,000, or has a pre-existing position or order at the baseline receipt.",
     "Any live-money endpoint, unsupported option shape, stale evidence, unknown account state, or excess loss can reach submission.",
     "The system enters before the measurement window, after its last-entry time, during a frozen event blackout, or after the stop boundary.",
-    "The final option valuation or Thursday-expiry settlement mechanics remain ambiguous and the system nevertheless holds through the default flatten boundary.",
+    "The system holds any managed position through the Thursday 15:45 ET forced-flat boundary.",
     "A strategy is selected because it looked best on the same sample used to report performance."
   ],
   "negative_controls": [
