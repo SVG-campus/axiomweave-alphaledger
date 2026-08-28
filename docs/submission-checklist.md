@@ -18,8 +18,8 @@
 
 ## Still requires owner/account/external action
 
-- [ ] Create/freeze the public GitHub repository and immutable commit
-- [ ] Provision the new isolated GCP resources from that commit
+- [x] Create/freeze the public GitHub repository and immutable commit
+- [x] Provision the new isolated GCP resources from that commit
 - [ ] Enter paper API key, secret, and account ID through the hidden local prompt
 - [ ] Pass GET-only fresh-account and Level 3 reconciliation
 - [ ] Type the explicit paper-order acknowledgement when ready

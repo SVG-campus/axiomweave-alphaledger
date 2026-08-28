@@ -4,6 +4,11 @@ Target project: `project-757198e6-df23-4e75-b08`. The read-only inventory on 202
 Compute Engine VMs, Cloud Run was disabled, Secret Manager was disabled, and only the default
 Compute service account existed. The scripts use only new `alphaledger-*` names.
 
+Current deployment: `alphaledger-hackathon-20260828` is serving the credential-free demo at
+<http://34.27.11.180> from public commit
+`3f9bcc021b533a3057b5c8aca3e02d5efa8e7020`. The runner is disabled, `runner.env` and the
+paper-enable flag are absent, and the three secret containers have no user-supplied versions.
+
 ## Architecture
 
 - One non-preemptible `e2-micro` in `us-central1-a`, 20 GB standard disk.

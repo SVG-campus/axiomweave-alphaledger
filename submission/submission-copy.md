@@ -71,10 +71,10 @@ finance: proof before profit.
 - Explainable AI
 - Developer Tools
 
-## Links to fill after publication
+## Submission links
 
-- Public GitHub: **TBD**
-- Deployed demo: **TBD**
+- Public GitHub: <https://github.com/SVG-campus/axiomweave-alphaledger>
+- Deployed demo: <http://34.27.11.180>
 - YouTube video: **TBD**
 - Team page: <https://lablab.ai/ai-hackathons/alpaca-ai-trading-agents-hackathon/axiomweave-alphaledger>
 - Paper account ID: enter only in the private submission field; never in the repository or video.

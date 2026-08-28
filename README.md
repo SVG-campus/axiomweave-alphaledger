@@ -6,6 +6,9 @@ spread—and every refusal—into a replayable evidence receipt.
 
 ![AlphaLedger cover](assets/alphaledger-cover.png)
 
+[Live demo](http://34.27.11.180) ·
+[Public repository](https://github.com/SVG-campus/axiomweave-alphaledger)
+
 ## What judges can test
 
 1. Run a valid capped-loss spread and inspect the quote-derived economics and Alpaca `mleg` plan.
