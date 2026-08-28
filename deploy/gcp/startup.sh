@@ -168,5 +168,7 @@ rm -f /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/alphaledger /etc/nginx/sites-enabled/alphaledger
 nginx -t
 systemctl daemon-reload
-systemctl enable --now alphaledger-demo nginx
+systemctl enable --now alphaledger-demo
+systemctl enable nginx
+systemctl restart nginx
 systemctl disable alphaledger-runner.service || true
