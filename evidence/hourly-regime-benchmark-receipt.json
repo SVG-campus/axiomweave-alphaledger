@@ -1,0 +1,415 @@
+{
+  "claim_ceiling": "C1 directional underlying proxy only; no historical option fills or future returns.",
+  "falsifier": "Promotion requires at least 100 train trades, positive train and validation means, and validation mean above its standard error.",
+  "final_decision": "Do not promote an hourly route; the validation candidate failed the untouched test.",
+  "generated_at": "2026-08-28T16:25:12.160114+00:00",
+  "promotion_passed_after_untouched_test": false,
+  "question": "Does a predeclared hourly SPY momentum or mean-reversion route survive train, validation, and untouched test periods?",
+  "routes_before_test": [
+    {
+      "family": "momentum",
+      "horizon": "one_hour",
+      "threshold": 0.45,
+      "train_gross": {
+        "hit_rate": 0.504132,
+        "mean_bps": -1.383026,
+        "median_bps": 0.338879,
+        "standard_error_bps": 1.693526,
+        "trades": 242
+      },
+      "validation_gross": {
+        "hit_rate": 0.506173,
+        "mean_bps": -1.158695,
+        "median_bps": 0.879201,
+        "standard_error_bps": 2.384102,
+        "trades": 81
+      }
+    },
+    {
+      "family": "momentum",
+      "horizon": "session_close",
+      "threshold": 0.45,
+      "train_gross": {
+        "hit_rate": 0.472222,
+        "mean_bps": -5.567854,
+        "median_bps": 0.0,
+        "standard_error_bps": 4.752811,
+        "trades": 252
+      },
+      "validation_gross": {
+        "hit_rate": 0.463415,
+        "mean_bps": 3.45452,
+        "median_bps": -1.087462,
+        "standard_error_bps": 4.657079,
+        "trades": 82
+      }
+    },
+    {
+      "family": "momentum",
+      "horizon": "next_open",
+      "threshold": 0.45,
+      "train_gross": {
+        "hit_rate": 0.484127,
+        "mean_bps": -3.212225,
+        "median_bps": -2.146383,
+        "standard_error_bps": 6.69812,
+        "trades": 252
+      },
+      "validation_gross": {
+        "hit_rate": 0.52439,
+        "mean_bps": -5.147651,
+        "median_bps": 4.303411,
+        "standard_error_bps": 9.416629,
+        "trades": 82
+      }
+    },
+    {
+      "family": "momentum",
+      "horizon": "one_hour",
+      "threshold": 0.6,
+      "train_gross": {
+        "hit_rate": 0.521053,
+        "mean_bps": -1.143012,
+        "median_bps": 0.654696,
+        "standard_error_bps": 2.039313,
+        "trades": 190
+      },
+      "validation_gross": {
+        "hit_rate": 0.507692,
+        "mean_bps": -0.031125,
+        "median_bps": 1.028491,
+        "standard_error_bps": 2.460145,
+        "trades": 65
+      }
+    },
+    {
+      "family": "momentum",
+      "horizon": "session_close",
+      "threshold": 0.6,
+      "train_gross": {
+        "hit_rate": 0.52,
+        "mean_bps": 0.90906,
+        "median_bps": 2.056447,
+        "standard_error_bps": 3.709992,
+        "trades": 200
+      },
+      "validation_gross": {
+        "hit_rate": 0.5,
+        "mean_bps": 5.303779,
+        "median_bps": 0.25156,
+        "standard_error_bps": 4.747855,
+        "trades": 66
+      }
+    },
+    {
+      "family": "momentum",
+      "horizon": "next_open",
+      "threshold": 0.6,
+      "train_gross": {
+        "hit_rate": 0.5,
+        "mean_bps": 1.856858,
+        "median_bps": 0.215458,
+        "standard_error_bps": 7.479867,
+        "trades": 200
+      },
+      "validation_gross": {
+        "hit_rate": 0.515152,
+        "mean_bps": -0.940877,
+        "median_bps": 1.499108,
+        "standard_error_bps": 9.909062,
+        "trades": 66
+      }
+    },
+    {
+      "family": "momentum",
+      "horizon": "one_hour",
+      "threshold": 0.75,
+      "train_gross": {
+        "hit_rate": 0.604651,
+        "mean_bps": 2.857132,
+        "median_bps": 5.146257,
+        "standard_error_bps": 2.785,
+        "trades": 129
+      },
+      "validation_gross": {
+        "hit_rate": 0.54902,
+        "mean_bps": 0.232952,
+        "median_bps": 2.815717,
+        "standard_error_bps": 3.037257,
+        "trades": 51
+      }
+    },
+    {
+      "family": "momentum",
+      "horizon": "session_close",
+      "threshold": 0.75,
+      "train_gross": {
+        "hit_rate": 0.557971,
+        "mean_bps": 1.275984,
+        "median_bps": 3.940753,
+        "standard_error_bps": 4.421511,
+        "trades": 138
+      },
+      "validation_gross": {
+        "hit_rate": 0.519231,
+        "mean_bps": 2.221754,
+        "median_bps": 1.67106,
+        "standard_error_bps": 5.426457,
+        "trades": 52
+      }
+    },
+    {
+      "family": "momentum",
+      "horizon": "next_open",
+      "threshold": 0.75,
+      "train_gross": {
+        "hit_rate": 0.521739,
+        "mean_bps": -2.565856,
+        "median_bps": 2.027057,
+        "standard_error_bps": 9.436769,
+        "trades": 138
+      },
+      "validation_gross": {
+        "hit_rate": 0.480769,
+        "mean_bps": -13.402675,
+        "median_bps": -5.089016,
+        "standard_error_bps": 11.035135,
+        "trades": 52
+      }
+    },
+    {
+      "family": "mean_reversion",
+      "horizon": "one_hour",
+      "threshold": 0.45,
+      "train_gross": {
+        "hit_rate": 0.495868,
+        "mean_bps": 1.383026,
+        "median_bps": -0.338879,
+        "standard_error_bps": 1.693526,
+        "trades": 242
+      },
+      "validation_gross": {
+        "hit_rate": 0.493827,
+        "mean_bps": 1.158695,
+        "median_bps": -0.879201,
+        "standard_error_bps": 2.384102,
+        "trades": 81
+      }
+    },
+    {
+      "family": "mean_reversion",
+      "horizon": "session_close",
+      "threshold": 0.45,
+      "train_gross": {
+        "hit_rate": 0.488095,
+        "mean_bps": 5.567854,
+        "median_bps": 0.0,
+        "standard_error_bps": 4.752811,
+        "trades": 252
+      },
+      "validation_gross": {
+        "hit_rate": 0.52439,
+        "mean_bps": -3.45452,
+        "median_bps": 1.087462,
+        "standard_error_bps": 4.657079,
+        "trades": 82
+      }
+    },
+    {
+      "family": "mean_reversion",
+      "horizon": "next_open",
+      "threshold": 0.45,
+      "train_gross": {
+        "hit_rate": 0.515873,
+        "mean_bps": 3.212225,
+        "median_bps": 2.146383,
+        "standard_error_bps": 6.69812,
+        "trades": 252
+      },
+      "validation_gross": {
+        "hit_rate": 0.47561,
+        "mean_bps": 5.147651,
+        "median_bps": -4.303411,
+        "standard_error_bps": 9.416629,
+        "trades": 82
+      }
+    },
+    {
+      "family": "mean_reversion",
+      "horizon": "one_hour",
+      "threshold": 0.6,
+      "train_gross": {
+        "hit_rate": 0.473684,
+        "mean_bps": 1.143012,
+        "median_bps": -0.654696,
+        "standard_error_bps": 2.039313,
+        "trades": 190
+      },
+      "validation_gross": {
+        "hit_rate": 0.492308,
+        "mean_bps": 0.031125,
+        "median_bps": -1.028491,
+        "standard_error_bps": 2.460145,
+        "trades": 65
+      }
+    },
+    {
+      "family": "mean_reversion",
+      "horizon": "session_close",
+      "threshold": 0.6,
+      "train_gross": {
+        "hit_rate": 0.425,
+        "mean_bps": -0.90906,
+        "median_bps": -2.056447,
+        "standard_error_bps": 3.709992,
+        "trades": 200
+      },
+      "validation_gross": {
+        "hit_rate": 0.484848,
+        "mean_bps": -5.303779,
+        "median_bps": -0.25156,
+        "standard_error_bps": 4.747855,
+        "trades": 66
+      }
+    },
+    {
+      "family": "mean_reversion",
+      "horizon": "next_open",
+      "threshold": 0.6,
+      "train_gross": {
+        "hit_rate": 0.5,
+        "mean_bps": -1.856858,
+        "median_bps": -0.215458,
+        "standard_error_bps": 7.479867,
+        "trades": 200
+      },
+      "validation_gross": {
+        "hit_rate": 0.484848,
+        "mean_bps": 0.940877,
+        "median_bps": -1.499108,
+        "standard_error_bps": 9.909062,
+        "trades": 66
+      }
+    },
+    {
+      "family": "mean_reversion",
+      "horizon": "one_hour",
+      "threshold": 0.75,
+      "train_gross": {
+        "hit_rate": 0.387597,
+        "mean_bps": -2.857132,
+        "median_bps": -5.146257,
+        "standard_error_bps": 2.785,
+        "trades": 129
+      },
+      "validation_gross": {
+        "hit_rate": 0.45098,
+        "mean_bps": -0.232952,
+        "median_bps": -2.815717,
+        "standard_error_bps": 3.037257,
+        "trades": 51
+      }
+    },
+    {
+      "family": "mean_reversion",
+      "horizon": "session_close",
+      "threshold": 0.75,
+      "train_gross": {
+        "hit_rate": 0.369565,
+        "mean_bps": -1.275984,
+        "median_bps": -3.940753,
+        "standard_error_bps": 4.421511,
+        "trades": 138
+      },
+      "validation_gross": {
+        "hit_rate": 0.461538,
+        "mean_bps": -2.221754,
+        "median_bps": -1.67106,
+        "standard_error_bps": 5.426457,
+        "trades": 52
+      }
+    },
+    {
+      "family": "mean_reversion",
+      "horizon": "next_open",
+      "threshold": 0.75,
+      "train_gross": {
+        "hit_rate": 0.478261,
+        "mean_bps": 2.565856,
+        "median_bps": -2.027057,
+        "standard_error_bps": 9.436769,
+        "trades": 138
+      },
+      "validation_gross": {
+        "hit_rate": 0.519231,
+        "mean_bps": 13.402675,
+        "median_bps": 5.089016,
+        "standard_error_bps": 11.035135,
+        "trades": 52
+      }
+    }
+  ],
+  "schema_version": 1,
+  "selected_route": {
+    "family": "mean_reversion",
+    "horizon": "next_open",
+    "threshold": 0.75,
+    "train_gross": {
+      "hit_rate": 0.478261,
+      "mean_bps": 2.565856,
+      "median_bps": -2.027057,
+      "standard_error_bps": 9.436769,
+      "trades": 138
+    },
+    "validation_gross": {
+      "hit_rate": 0.519231,
+      "mean_bps": 13.402675,
+      "median_bps": 5.089016,
+      "standard_error_bps": 11.035135,
+      "trades": 52
+    }
+  },
+  "source": {
+    "bars": 3494,
+    "first": "2024-08-28T15:30:00+00:00",
+    "last": "2026-08-28T16:25:31+00:00",
+    "retrieved_sha256": "d48d7e3ba603d5ea9a138623e27498fb0d40f77435f05f10a2e2176fd8551d12",
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=60m&range=2y&includePrePost=false&events=div%2Csplits"
+  },
+  "split": {
+    "train": [
+      "2024-09-03",
+      "2025-11-10"
+    ],
+    "untouched_test": [
+      "2026-04-08",
+      "2026-08-28"
+    ],
+    "validation": [
+      "2025-11-11",
+      "2026-04-07"
+    ]
+  },
+  "stop_rule": "This is the final pre-window route-family expansion. If no route promotes, retain the strategy as C0 exploratory and reduce risk rather than searching more variants.",
+  "untouched_test_gross": {
+    "hit_rate": 0.490566,
+    "mean_bps": -4.275617,
+    "median_bps": -1.699899,
+    "standard_error_bps": 9.155599,
+    "trades": 53
+  },
+  "untouched_test_minus_1bp": {
+    "hit_rate": 0.490566,
+    "mean_bps": -5.275617,
+    "median_bps": -2.699899,
+    "standard_error_bps": 9.155599,
+    "trades": 53
+  },
+  "untouched_test_minus_5bp": {
+    "hit_rate": 0.490566,
+    "mean_bps": -9.275617,
+    "median_bps": -6.699899,
+    "standard_error_bps": 9.155599,
+    "trades": 53
+  }
+}

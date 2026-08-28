@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-08-24T21:30:00Z",
+  "question": "How should exact Alpaca stock and options GET responses enter the governed options engine without broadening trading authority or overstating the evidence?",
+  "assumptions": [
+    "Alpaca response schemas can drift, so unknown, malformed, future-dated, or incomplete fields must fail closed or remain named skips.",
+    "Stock and options feeds have different provenance and entitlements and must remain separately labeled.",
+    "A pagination token means the observed set is incomplete and cannot be silently treated as a full option universe.",
+    "Payload hashes and endpoint references are sufficient for a local C1 receipt; raw account and market payloads do not belong in the ledger or dashboard.",
+    "No credentials, external API calls, broker orders, deployment, publication, recording upload, or submission are authorized in this work package."
+  ],
+  "options": [
+    "defer normalization until the active phase",
+    "install a broad broker SDK and pass client objects through the application",
+    "pass raw Alpaca payloads into the optional AI adviser",
+    "use a strict pure normalizer over three exact read-only responses and feed only typed data into deterministic policy"
+  ],
+  "evidence": [
+    {
+      "source": "https://docs.alpaca.markets/us/reference/stocksnapshotsingle",
+      "retrieved_at": "2026-08-24",
+      "facts": [
+        "GET https://data.alpaca.markets/v2/stocks/{symbol}/snapshot returns the latest trade, quote, minute bar, daily bar, and previous daily bar",
+        "the stock feed is an explicit request parameter"
+      ]
+    },
+    {
+      "source": "https://docs.alpaca.markets/us/reference/optionchain",
+      "retrieved_at": "2026-08-24",
+      "facts": [
+        "GET https://data.alpaca.markets/v1beta1/options/snapshots/{underlying_symbol} returns option snapshots including quotes and Greeks",
+        "indicative and OPRA are distinct evidence layers"
+      ]
+    },
+    {
+      "source": "https://docs.alpaca.markets/us/v1.1/reference/get-options-contracts",
+      "retrieved_at": "2026-08-24",
+      "facts": [
+        "GET https://paper-api.alpaca.markets/v2/options/contracts returns contract metadata including symbol, expiration, type, strike, and open interest"
+      ]
+    },
+    {
+      "source": "local schema-3 verification receipt",
+      "facts": [
+        "44 deterministic tests pass",
+        "the existing observer exposes only named GET methods",
+        "the governed options engine remains C1 on synthetic inputs and never sends its validated mleg payload"
+      ]
+    }
+  ],
+  "decision": "Add the exact stock snapshot GET route, normalize stock snapshot plus contract catalog plus option chain through a pure strict bridge, retain separate feed and age fields, retain payload hashes and named skips, reject pagination and malformed required fields, and pass only typed OptionChainSnapshot data into deterministic policy.",
+  "claim_ceiling": "C1 mechanics: Alpaca-shaped frozen fixtures demonstrate a redacted read-only bridge, not live connectivity, official evaluation, predictive validity, fill quality, profitability, or safety",
+  "falsifiers": [
+    "A malformed or missing price, timestamp, contract identity, or metadata is silently accepted as valid evidence.",
+    "A nonempty pagination token is ignored.",
+    "Stock or options feed labels are lost or conflated.",
+    "A stale or future-dated underlying snapshot passes deterministic policy.",
+    "The normalized thesis can pass with fewer than the frozen source-reference floor.",
+    "The frozen Alpaca-shaped fixture bridge cannot reproduce the governed one-contract PASS path with a recomputed 20 dollar maximum loss.",
+    "Raw payloads, credentials, account identifiers, or secret headers enter a receipt, ledger, dashboard, test artifact, or repository file."
+  ],
+  "negative_controls": [
+    "nonempty pagination token",
+    "stock symbol mismatch",
+    "future-dated stock trade",
+    "stale underlying observation",
+    "malformed option quote retained as a named skip",
+    "unknown feed rejected",
+    "nonready account receipt cannot become AccountState"
+  ],
+  "budget": {
+    "cash_spend": 0,
+    "external_api_calls": 0,
+    "broker_orders": 0,
+    "credentials_loaded": 0,
+    "implementation_loops": 2,
+    "regression_budget": 0
+  },
+  "stop_rule": "Stop when frozen Alpaca-shaped fixtures normalize through the exact GET observer into the governed engine, feed and freshness controls pass, pagination and malformed-input controls fail closed, the dashboard and runbook show the bridge without raw data, and the full verifier returns zero regressions."
+}

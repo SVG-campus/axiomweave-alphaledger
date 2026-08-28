@@ -1,0 +1,65 @@
+{
+  "snapshots": {
+    "SPY260918C00600000": {
+      "latestTrade": {
+        "t": "2026-08-24T11:59:47Z",
+        "p": 0.52,
+        "s": 5
+      },
+      "latestQuote": {
+        "t": "2026-08-24T11:59:48Z",
+        "bp": 0.50,
+        "ap": 0.55
+      },
+      "greeks": {
+        "delta": 0.51,
+        "gamma": 0.02,
+        "rho": 0.01,
+        "theta": -0.03,
+        "vega": 0.04
+      },
+      "impliedVolatility": 0.22
+    },
+    "SPY260918C00601000": {
+      "latestTrade": {
+        "t": "2026-08-24T11:59:47Z",
+        "p": 0.37,
+        "s": 8
+      },
+      "latestQuote": {
+        "t": "2026-08-24T11:59:48Z",
+        "bp": 0.35,
+        "ap": 0.40
+      },
+      "greeks": {
+        "delta": 0.42,
+        "gamma": 0.02,
+        "rho": 0.01,
+        "theta": -0.03,
+        "vega": 0.04
+      },
+      "impliedVolatility": 0.22
+    },
+    "SPY260918C00602000": {
+      "latestTrade": {
+        "t": "2026-08-24T11:59:47Z",
+        "p": 0.25,
+        "s": 6
+      },
+      "latestQuote": {
+        "t": "2026-08-24T11:59:48Z",
+        "bp": 0.23,
+        "ap": 0.28
+      },
+      "greeks": {
+        "delta": 0.34,
+        "gamma": 0.02,
+        "rho": 0.01,
+        "theta": -0.03,
+        "vega": 0.04
+      },
+      "impliedVolatility": 0.22
+    }
+  },
+  "next_page_token": null
+}

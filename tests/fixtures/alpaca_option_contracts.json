@@ -1,0 +1,35 @@
+{
+  "option_contracts": [
+    {
+      "symbol": "SPY260918C00600000",
+      "underlying_symbol": "SPY",
+      "expiration_date": "2026-09-18",
+      "type": "call",
+      "strike_price": "600.0",
+      "status": "active",
+      "tradable": true,
+      "open_interest": "650"
+    },
+    {
+      "symbol": "SPY260918C00601000",
+      "underlying_symbol": "SPY",
+      "expiration_date": "2026-09-18",
+      "type": "call",
+      "strike_price": "601.0",
+      "status": "active",
+      "tradable": true,
+      "open_interest": "700"
+    },
+    {
+      "symbol": "SPY260918C00602000",
+      "underlying_symbol": "SPY",
+      "expiration_date": "2026-09-18",
+      "type": "call",
+      "strike_price": "602.0",
+      "status": "active",
+      "tradable": true,
+      "open_interest": "625"
+    }
+  ],
+  "next_page_token": null
+}

@@ -1,0 +1,1349 @@
+{
+  "claim_ceiling": "C1 directional stock-return proxy; no historical option fills or future P&L are established.",
+  "cost_or_risk_budget": "One free 60-day public snapshot; no paid data, model calls, or broker requests.",
+  "exploratory_fallback": {
+    "earliest_entry_et": "10:20:00",
+    "entry_policy": "confirmed_one",
+    "held_out_gross": {
+      "hit_rate": 0.6875,
+      "mean_signed_return_bps": 2.068468,
+      "median_signed_return_bps": 5.886113,
+      "standard_error_bps": 2.281778,
+      "total_signed_return_bps": 33.095482,
+      "trades": 16
+    },
+    "held_out_minus_1bp": {
+      "hit_rate": 0.6875,
+      "mean_signed_return_bps": 1.068468,
+      "median_signed_return_bps": 4.886113,
+      "standard_error_bps": 2.281778,
+      "total_signed_return_bps": 17.095482,
+      "trades": 16
+    },
+    "held_out_minus_5bp": {
+      "hit_rate": 0.5,
+      "mean_signed_return_bps": -2.931532,
+      "median_signed_return_bps": 0.886113,
+      "standard_error_bps": 2.281778,
+      "total_signed_return_bps": -46.904518,
+      "trades": 16
+    },
+    "horizon": "30m",
+    "maximum_entries": 1,
+    "threshold": 0.45,
+    "train_gross": {
+      "hit_rate": 0.666667,
+      "mean_signed_return_bps": 3.479698,
+      "median_signed_return_bps": 3.589166,
+      "standard_error_bps": 3.125949,
+      "total_signed_return_bps": 146.147331,
+      "trades": 42
+    }
+  },
+  "falsifier": "Do not promote the signal if selection has fewer than 20 trades, held-out gross mean is nonpositive, or held-out gross mean does not exceed its standard error. Friction sensitivities are reported because this is not an option-fill model.",
+  "final_decision": "No route cleared the predeclared held-out promotion gate. Keep entries C0 exploratory, reduce risk, and do not describe the signal as alpha.",
+  "generated_at": "2026-08-28T16:25:07.983038+00:00",
+  "promotion_passed": false,
+  "question": "Which frozen signal threshold survives a chronological 70/30 split on recent SPY 5-minute data?",
+  "routes": [
+    {
+      "earliest_entry_et": "09:50:00",
+      "entry_policy": "early_two",
+      "held_out_gross": {
+        "hit_rate": 0.545455,
+        "mean_signed_return_bps": -0.581179,
+        "median_signed_return_bps": 0.777191,
+        "standard_error_bps": 2.087197,
+        "total_signed_return_bps": -19.178909,
+        "trades": 33
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.484848,
+        "mean_signed_return_bps": -1.581179,
+        "median_signed_return_bps": -0.222809,
+        "standard_error_bps": 2.087197,
+        "total_signed_return_bps": -52.178909,
+        "trades": 33
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.333333,
+        "mean_signed_return_bps": -5.581179,
+        "median_signed_return_bps": -4.222809,
+        "standard_error_bps": 2.087197,
+        "total_signed_return_bps": -184.178909,
+        "trades": 33
+      },
+      "horizon": "30m",
+      "maximum_entries": 2,
+      "threshold": 0.45,
+      "train_gross": {
+        "hit_rate": 0.559524,
+        "mean_signed_return_bps": -0.801976,
+        "median_signed_return_bps": 2.469205,
+        "standard_error_bps": 2.358316,
+        "total_signed_return_bps": -67.366021,
+        "trades": 84
+      }
+    },
+    {
+      "earliest_entry_et": "09:50:00",
+      "entry_policy": "early_two",
+      "held_out_gross": {
+        "hit_rate": 0.516129,
+        "mean_signed_return_bps": -2.646769,
+        "median_signed_return_bps": 0.129565,
+        "standard_error_bps": 3.536933,
+        "total_signed_return_bps": -82.049835,
+        "trades": 31
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.451613,
+        "mean_signed_return_bps": -3.646769,
+        "median_signed_return_bps": -0.870435,
+        "standard_error_bps": 3.536933,
+        "total_signed_return_bps": -113.049835,
+        "trades": 31
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.419355,
+        "mean_signed_return_bps": -7.646769,
+        "median_signed_return_bps": -4.870435,
+        "standard_error_bps": 3.536933,
+        "total_signed_return_bps": -237.049835,
+        "trades": 31
+      },
+      "horizon": "120m",
+      "maximum_entries": 2,
+      "threshold": 0.45,
+      "train_gross": {
+        "hit_rate": 0.52381,
+        "mean_signed_return_bps": -0.396891,
+        "median_signed_return_bps": 1.282884,
+        "standard_error_bps": 4.920473,
+        "total_signed_return_bps": -33.338831,
+        "trades": 84
+      }
+    },
+    {
+      "earliest_entry_et": "09:50:00",
+      "entry_policy": "early_two",
+      "held_out_gross": {
+        "hit_rate": 0.515152,
+        "mean_signed_return_bps": -0.12666,
+        "median_signed_return_bps": 5.591873,
+        "standard_error_bps": 4.793981,
+        "total_signed_return_bps": -4.179772,
+        "trades": 33
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.515152,
+        "mean_signed_return_bps": -1.12666,
+        "median_signed_return_bps": 4.591873,
+        "standard_error_bps": 4.793981,
+        "total_signed_return_bps": -37.179772,
+        "trades": 33
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.515152,
+        "mean_signed_return_bps": -5.12666,
+        "median_signed_return_bps": 0.591873,
+        "standard_error_bps": 4.793981,
+        "total_signed_return_bps": -169.179772,
+        "trades": 33
+      },
+      "horizon": "session_close",
+      "maximum_entries": 2,
+      "threshold": 0.45,
+      "train_gross": {
+        "hit_rate": 0.571429,
+        "mean_signed_return_bps": 5.073166,
+        "median_signed_return_bps": 9.631521,
+        "standard_error_bps": 6.565764,
+        "total_signed_return_bps": 426.145945,
+        "trades": 84
+      }
+    },
+    {
+      "earliest_entry_et": "09:50:00",
+      "entry_policy": "early_two",
+      "held_out_gross": {
+        "hit_rate": 0.451613,
+        "mean_signed_return_bps": -3.874054,
+        "median_signed_return_bps": -4.242979,
+        "standard_error_bps": 6.271062,
+        "total_signed_return_bps": -120.095688,
+        "trades": 31
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.451613,
+        "mean_signed_return_bps": -4.874054,
+        "median_signed_return_bps": -5.242979,
+        "standard_error_bps": 6.271062,
+        "total_signed_return_bps": -151.095688,
+        "trades": 31
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.451613,
+        "mean_signed_return_bps": -8.874054,
+        "median_signed_return_bps": -9.242979,
+        "standard_error_bps": 6.271062,
+        "total_signed_return_bps": -275.095688,
+        "trades": 31
+      },
+      "horizon": "next_open",
+      "maximum_entries": 2,
+      "threshold": 0.45,
+      "train_gross": {
+        "hit_rate": 0.619048,
+        "mean_signed_return_bps": 8.232788,
+        "median_signed_return_bps": 10.515826,
+        "standard_error_bps": 8.754559,
+        "total_signed_return_bps": 691.554179,
+        "trades": 84
+      }
+    },
+    {
+      "earliest_entry_et": "09:50:00",
+      "entry_policy": "early_two",
+      "held_out_gross": {
+        "hit_rate": 0.566667,
+        "mean_signed_return_bps": 1.016851,
+        "median_signed_return_bps": 2.891487,
+        "standard_error_bps": 1.872888,
+        "total_signed_return_bps": 30.505531,
+        "trades": 30
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.533333,
+        "mean_signed_return_bps": 0.016851,
+        "median_signed_return_bps": 1.891487,
+        "standard_error_bps": 1.872888,
+        "total_signed_return_bps": 0.505531,
+        "trades": 30
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.333333,
+        "mean_signed_return_bps": -3.983149,
+        "median_signed_return_bps": -2.108513,
+        "standard_error_bps": 1.872888,
+        "total_signed_return_bps": -119.494469,
+        "trades": 30
+      },
+      "horizon": "30m",
+      "maximum_entries": 2,
+      "threshold": 0.55,
+      "train_gross": {
+        "hit_rate": 0.5,
+        "mean_signed_return_bps": -1.160572,
+        "median_signed_return_bps": 0.068091,
+        "standard_error_bps": 2.216966,
+        "total_signed_return_bps": -97.488078,
+        "trades": 84
+      }
+    },
+    {
+      "earliest_entry_et": "09:50:00",
+      "entry_policy": "early_two",
+      "held_out_gross": {
+        "hit_rate": 0.464286,
+        "mean_signed_return_bps": -4.343783,
+        "median_signed_return_bps": -4.246302,
+        "standard_error_bps": 3.484852,
+        "total_signed_return_bps": -121.625933,
+        "trades": 28
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.392857,
+        "mean_signed_return_bps": -5.343783,
+        "median_signed_return_bps": -5.246302,
+        "standard_error_bps": 3.484852,
+        "total_signed_return_bps": -149.625933,
+        "trades": 28
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.392857,
+        "mean_signed_return_bps": -9.343783,
+        "median_signed_return_bps": -9.246302,
+        "standard_error_bps": 3.484852,
+        "total_signed_return_bps": -261.625933,
+        "trades": 28
+      },
+      "horizon": "120m",
+      "maximum_entries": 2,
+      "threshold": 0.55,
+      "train_gross": {
+        "hit_rate": 0.52381,
+        "mean_signed_return_bps": -0.169769,
+        "median_signed_return_bps": 2.779159,
+        "standard_error_bps": 4.743453,
+        "total_signed_return_bps": -14.260613,
+        "trades": 84
+      }
+    },
+    {
+      "earliest_entry_et": "09:50:00",
+      "entry_policy": "early_two",
+      "held_out_gross": {
+        "hit_rate": 0.533333,
+        "mean_signed_return_bps": -1.098002,
+        "median_signed_return_bps": 2.550886,
+        "standard_error_bps": 4.970683,
+        "total_signed_return_bps": -32.94005,
+        "trades": 30
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.533333,
+        "mean_signed_return_bps": -2.098002,
+        "median_signed_return_bps": 1.550886,
+        "standard_error_bps": 4.970683,
+        "total_signed_return_bps": -62.94005,
+        "trades": 30
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.466667,
+        "mean_signed_return_bps": -6.098002,
+        "median_signed_return_bps": -2.449114,
+        "standard_error_bps": 4.970683,
+        "total_signed_return_bps": -182.94005,
+        "trades": 30
+      },
+      "horizon": "session_close",
+      "maximum_entries": 2,
+      "threshold": 0.55,
+      "train_gross": {
+        "hit_rate": 0.535714,
+        "mean_signed_return_bps": 3.009947,
+        "median_signed_return_bps": 9.631521,
+        "standard_error_bps": 6.597429,
+        "total_signed_return_bps": 252.835525,
+        "trades": 84
+      }
+    },
+    {
+      "earliest_entry_et": "09:50:00",
+      "entry_policy": "early_two",
+      "held_out_gross": {
+        "hit_rate": 0.392857,
+        "mean_signed_return_bps": -10.986285,
+        "median_signed_return_bps": -15.737449,
+        "standard_error_bps": 6.487792,
+        "total_signed_return_bps": -307.615982,
+        "trades": 28
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.392857,
+        "mean_signed_return_bps": -11.986285,
+        "median_signed_return_bps": -16.737449,
+        "standard_error_bps": 6.487792,
+        "total_signed_return_bps": -335.615982,
+        "trades": 28
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.392857,
+        "mean_signed_return_bps": -15.986285,
+        "median_signed_return_bps": -20.737449,
+        "standard_error_bps": 6.487792,
+        "total_signed_return_bps": -447.615982,
+        "trades": 28
+      },
+      "horizon": "next_open",
+      "maximum_entries": 2,
+      "threshold": 0.55,
+      "train_gross": {
+        "hit_rate": 0.642857,
+        "mean_signed_return_bps": 16.117251,
+        "median_signed_return_bps": 17.101939,
+        "standard_error_bps": 8.251616,
+        "total_signed_return_bps": 1353.849083,
+        "trades": 84
+      }
+    },
+    {
+      "earliest_entry_et": "09:50:00",
+      "entry_policy": "early_two",
+      "held_out_gross": {
+        "hit_rate": 0.541667,
+        "mean_signed_return_bps": 2.276325,
+        "median_signed_return_bps": 1.487667,
+        "standard_error_bps": 1.923178,
+        "total_signed_return_bps": 54.631794,
+        "trades": 24
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.5,
+        "mean_signed_return_bps": 1.276325,
+        "median_signed_return_bps": 0.487667,
+        "standard_error_bps": 1.923178,
+        "total_signed_return_bps": 30.631794,
+        "trades": 24
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.291667,
+        "mean_signed_return_bps": -2.723675,
+        "median_signed_return_bps": -3.512333,
+        "standard_error_bps": 1.923178,
+        "total_signed_return_bps": -65.368206,
+        "trades": 24
+      },
+      "horizon": "30m",
+      "maximum_entries": 2,
+      "threshold": 0.65,
+      "train_gross": {
+        "hit_rate": 0.531646,
+        "mean_signed_return_bps": -0.551566,
+        "median_signed_return_bps": 1.971608,
+        "standard_error_bps": 2.338814,
+        "total_signed_return_bps": -43.573676,
+        "trades": 79
+      }
+    },
+    {
+      "earliest_entry_et": "09:50:00",
+      "entry_policy": "early_two",
+      "held_out_gross": {
+        "hit_rate": 0.590909,
+        "mean_signed_return_bps": -2.09409,
+        "median_signed_return_bps": 1.562098,
+        "standard_error_bps": 4.136423,
+        "total_signed_return_bps": -46.06998,
+        "trades": 22
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.5,
+        "mean_signed_return_bps": -3.09409,
+        "median_signed_return_bps": 0.562098,
+        "standard_error_bps": 4.136423,
+        "total_signed_return_bps": -68.06998,
+        "trades": 22
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.454545,
+        "mean_signed_return_bps": -7.09409,
+        "median_signed_return_bps": -3.437902,
+        "standard_error_bps": 4.136423,
+        "total_signed_return_bps": -156.06998,
+        "trades": 22
+      },
+      "horizon": "120m",
+      "maximum_entries": 2,
+      "threshold": 0.65,
+      "train_gross": {
+        "hit_rate": 0.506667,
+        "mean_signed_return_bps": -0.566467,
+        "median_signed_return_bps": 0.680412,
+        "standard_error_bps": 5.141569,
+        "total_signed_return_bps": -42.485014,
+        "trades": 75
+      }
+    },
+    {
+      "earliest_entry_et": "09:50:00",
+      "entry_policy": "early_two",
+      "held_out_gross": {
+        "hit_rate": 0.625,
+        "mean_signed_return_bps": 0.830259,
+        "median_signed_return_bps": 4.944871,
+        "standard_error_bps": 5.851861,
+        "total_signed_return_bps": 19.926218,
+        "trades": 24
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.625,
+        "mean_signed_return_bps": -0.169741,
+        "median_signed_return_bps": 3.944871,
+        "standard_error_bps": 5.851861,
+        "total_signed_return_bps": -4.073782,
+        "trades": 24
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.5,
+        "mean_signed_return_bps": -4.169741,
+        "median_signed_return_bps": -0.055129,
+        "standard_error_bps": 5.851861,
+        "total_signed_return_bps": -100.073782,
+        "trades": 24
+      },
+      "horizon": "session_close",
+      "maximum_entries": 2,
+      "threshold": 0.65,
+      "train_gross": {
+        "hit_rate": 0.582278,
+        "mean_signed_return_bps": 2.657601,
+        "median_signed_return_bps": 9.580704,
+        "standard_error_bps": 6.73212,
+        "total_signed_return_bps": 209.950503,
+        "trades": 79
+      }
+    },
+    {
+      "earliest_entry_et": "09:50:00",
+      "entry_policy": "early_two",
+      "held_out_gross": {
+        "hit_rate": 0.409091,
+        "mean_signed_return_bps": -9.898032,
+        "median_signed_return_bps": -12.549592,
+        "standard_error_bps": 7.387132,
+        "total_signed_return_bps": -217.756705,
+        "trades": 22
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.409091,
+        "mean_signed_return_bps": -10.898032,
+        "median_signed_return_bps": -13.549592,
+        "standard_error_bps": 7.387132,
+        "total_signed_return_bps": -239.756705,
+        "trades": 22
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.409091,
+        "mean_signed_return_bps": -14.898032,
+        "median_signed_return_bps": -17.549592,
+        "standard_error_bps": 7.387132,
+        "total_signed_return_bps": -327.756705,
+        "trades": 22
+      },
+      "horizon": "next_open",
+      "maximum_entries": 2,
+      "threshold": 0.65,
+      "train_gross": {
+        "hit_rate": 0.556962,
+        "mean_signed_return_bps": 11.206424,
+        "median_signed_return_bps": 5.958297,
+        "standard_error_bps": 8.784757,
+        "total_signed_return_bps": 885.307481,
+        "trades": 79
+      }
+    },
+    {
+      "earliest_entry_et": "09:50:00",
+      "entry_policy": "early_two",
+      "held_out_gross": {
+        "hit_rate": 0.461538,
+        "mean_signed_return_bps": 1.003335,
+        "median_signed_return_bps": -1.630303,
+        "standard_error_bps": 3.412712,
+        "total_signed_return_bps": 13.043358,
+        "trades": 13
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.384615,
+        "mean_signed_return_bps": 0.003335,
+        "median_signed_return_bps": -2.630303,
+        "standard_error_bps": 3.412712,
+        "total_signed_return_bps": 0.043358,
+        "trades": 13
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.384615,
+        "mean_signed_return_bps": -3.996665,
+        "median_signed_return_bps": -6.630303,
+        "standard_error_bps": 3.412712,
+        "total_signed_return_bps": -51.956642,
+        "trades": 13
+      },
+      "horizon": "30m",
+      "maximum_entries": 2,
+      "threshold": 0.75,
+      "train_gross": {
+        "hit_rate": 0.492754,
+        "mean_signed_return_bps": -2.754439,
+        "median_signed_return_bps": -0.134167,
+        "standard_error_bps": 2.627481,
+        "total_signed_return_bps": -190.056277,
+        "trades": 69
+      }
+    },
+    {
+      "earliest_entry_et": "09:50:00",
+      "entry_policy": "early_two",
+      "held_out_gross": {
+        "hit_rate": 0.583333,
+        "mean_signed_return_bps": -8.146765,
+        "median_signed_return_bps": 1.621494,
+        "standard_error_bps": 7.666821,
+        "total_signed_return_bps": -97.761184,
+        "trades": 12
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.583333,
+        "mean_signed_return_bps": -9.146765,
+        "median_signed_return_bps": 0.621494,
+        "standard_error_bps": 7.666821,
+        "total_signed_return_bps": -109.761184,
+        "trades": 12
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.416667,
+        "mean_signed_return_bps": -13.146765,
+        "median_signed_return_bps": -3.378506,
+        "standard_error_bps": 7.666821,
+        "total_signed_return_bps": -157.761184,
+        "trades": 12
+      },
+      "horizon": "120m",
+      "maximum_entries": 2,
+      "threshold": 0.75,
+      "train_gross": {
+        "hit_rate": 0.53125,
+        "mean_signed_return_bps": 0.92863,
+        "median_signed_return_bps": 1.973615,
+        "standard_error_bps": 6.028502,
+        "total_signed_return_bps": 59.432322,
+        "trades": 64
+      }
+    },
+    {
+      "earliest_entry_et": "09:50:00",
+      "entry_policy": "early_two",
+      "held_out_gross": {
+        "hit_rate": 0.538462,
+        "mean_signed_return_bps": -5.11064,
+        "median_signed_return_bps": 6.014743,
+        "standard_error_bps": 9.863639,
+        "total_signed_return_bps": -66.438314,
+        "trades": 13
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.538462,
+        "mean_signed_return_bps": -6.11064,
+        "median_signed_return_bps": 5.014743,
+        "standard_error_bps": 9.863639,
+        "total_signed_return_bps": -79.438314,
+        "trades": 13
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.538462,
+        "mean_signed_return_bps": -10.11064,
+        "median_signed_return_bps": 1.014743,
+        "standard_error_bps": 9.863639,
+        "total_signed_return_bps": -131.438314,
+        "trades": 13
+      },
+      "horizon": "session_close",
+      "maximum_entries": 2,
+      "threshold": 0.75,
+      "train_gross": {
+        "hit_rate": 0.652174,
+        "mean_signed_return_bps": 4.557186,
+        "median_signed_return_bps": 7.325747,
+        "standard_error_bps": 7.461673,
+        "total_signed_return_bps": 314.445809,
+        "trades": 69
+      }
+    },
+    {
+      "earliest_entry_et": "09:50:00",
+      "entry_policy": "early_two",
+      "held_out_gross": {
+        "hit_rate": 0.5,
+        "mean_signed_return_bps": -9.511704,
+        "median_signed_return_bps": -1.509918,
+        "standard_error_bps": 12.194116,
+        "total_signed_return_bps": -114.140447,
+        "trades": 12
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.5,
+        "mean_signed_return_bps": -10.511704,
+        "median_signed_return_bps": -2.509918,
+        "standard_error_bps": 12.194116,
+        "total_signed_return_bps": -126.140447,
+        "trades": 12
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.5,
+        "mean_signed_return_bps": -14.511704,
+        "median_signed_return_bps": -6.509918,
+        "standard_error_bps": 12.194116,
+        "total_signed_return_bps": -174.140447,
+        "trades": 12
+      },
+      "horizon": "next_open",
+      "maximum_entries": 2,
+      "threshold": 0.75,
+      "train_gross": {
+        "hit_rate": 0.521739,
+        "mean_signed_return_bps": 12.373071,
+        "median_signed_return_bps": 1.209145,
+        "standard_error_bps": 9.529438,
+        "total_signed_return_bps": 853.741877,
+        "trades": 69
+      }
+    },
+    {
+      "earliest_entry_et": "10:20:00",
+      "entry_policy": "confirmed_one",
+      "held_out_gross": {
+        "hit_rate": 0.6875,
+        "mean_signed_return_bps": 2.068468,
+        "median_signed_return_bps": 5.886113,
+        "standard_error_bps": 2.281778,
+        "total_signed_return_bps": 33.095482,
+        "trades": 16
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.6875,
+        "mean_signed_return_bps": 1.068468,
+        "median_signed_return_bps": 4.886113,
+        "standard_error_bps": 2.281778,
+        "total_signed_return_bps": 17.095482,
+        "trades": 16
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.5,
+        "mean_signed_return_bps": -2.931532,
+        "median_signed_return_bps": 0.886113,
+        "standard_error_bps": 2.281778,
+        "total_signed_return_bps": -46.904518,
+        "trades": 16
+      },
+      "horizon": "30m",
+      "maximum_entries": 1,
+      "threshold": 0.45,
+      "train_gross": {
+        "hit_rate": 0.666667,
+        "mean_signed_return_bps": 3.479698,
+        "median_signed_return_bps": 3.589166,
+        "standard_error_bps": 3.125949,
+        "total_signed_return_bps": 146.147331,
+        "trades": 42
+      }
+    },
+    {
+      "earliest_entry_et": "10:20:00",
+      "entry_policy": "confirmed_one",
+      "held_out_gross": {
+        "hit_rate": 0.666667,
+        "mean_signed_return_bps": 0.624751,
+        "median_signed_return_bps": 6.198946,
+        "standard_error_bps": 4.306443,
+        "total_signed_return_bps": 9.371272,
+        "trades": 15
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.6,
+        "mean_signed_return_bps": -0.375249,
+        "median_signed_return_bps": 5.198946,
+        "standard_error_bps": 4.306443,
+        "total_signed_return_bps": -5.628728,
+        "trades": 15
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.533333,
+        "mean_signed_return_bps": -4.375249,
+        "median_signed_return_bps": 1.198946,
+        "standard_error_bps": 4.306443,
+        "total_signed_return_bps": -65.628728,
+        "trades": 15
+      },
+      "horizon": "120m",
+      "maximum_entries": 1,
+      "threshold": 0.45,
+      "train_gross": {
+        "hit_rate": 0.595238,
+        "mean_signed_return_bps": 10.220148,
+        "median_signed_return_bps": 9.630728,
+        "standard_error_bps": 6.650919,
+        "total_signed_return_bps": 429.246214,
+        "trades": 42
+      }
+    },
+    {
+      "earliest_entry_et": "10:20:00",
+      "entry_policy": "confirmed_one",
+      "held_out_gross": {
+        "hit_rate": 0.5625,
+        "mean_signed_return_bps": 4.604139,
+        "median_signed_return_bps": 10.240776,
+        "standard_error_bps": 6.456535,
+        "total_signed_return_bps": 73.666225,
+        "trades": 16
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.5625,
+        "mean_signed_return_bps": 3.604139,
+        "median_signed_return_bps": 9.240776,
+        "standard_error_bps": 6.456535,
+        "total_signed_return_bps": 57.666225,
+        "trades": 16
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.5625,
+        "mean_signed_return_bps": -0.395861,
+        "median_signed_return_bps": 5.240776,
+        "standard_error_bps": 6.456535,
+        "total_signed_return_bps": -6.333775,
+        "trades": 16
+      },
+      "horizon": "session_close",
+      "maximum_entries": 1,
+      "threshold": 0.45,
+      "train_gross": {
+        "hit_rate": 0.595238,
+        "mean_signed_return_bps": 2.343084,
+        "median_signed_return_bps": 17.917374,
+        "standard_error_bps": 9.890157,
+        "total_signed_return_bps": 98.40952,
+        "trades": 42
+      }
+    },
+    {
+      "earliest_entry_et": "10:20:00",
+      "entry_policy": "confirmed_one",
+      "held_out_gross": {
+        "hit_rate": 0.4,
+        "mean_signed_return_bps": -3.344993,
+        "median_signed_return_bps": -10.775941,
+        "standard_error_bps": 9.160708,
+        "total_signed_return_bps": -50.174893,
+        "trades": 15
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.4,
+        "mean_signed_return_bps": -4.344993,
+        "median_signed_return_bps": -11.775941,
+        "standard_error_bps": 9.160708,
+        "total_signed_return_bps": -65.174893,
+        "trades": 15
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.4,
+        "mean_signed_return_bps": -8.344993,
+        "median_signed_return_bps": -15.775941,
+        "standard_error_bps": 9.160708,
+        "total_signed_return_bps": -125.174893,
+        "trades": 15
+      },
+      "horizon": "next_open",
+      "maximum_entries": 1,
+      "threshold": 0.45,
+      "train_gross": {
+        "hit_rate": 0.666667,
+        "mean_signed_return_bps": 11.985658,
+        "median_signed_return_bps": 10.758915,
+        "standard_error_bps": 12.928371,
+        "total_signed_return_bps": 503.397641,
+        "trades": 42
+      }
+    },
+    {
+      "earliest_entry_et": "10:20:00",
+      "entry_policy": "confirmed_one",
+      "held_out_gross": {
+        "hit_rate": 0.5,
+        "mean_signed_return_bps": -0.369221,
+        "median_signed_return_bps": 0.645005,
+        "standard_error_bps": 2.01617,
+        "total_signed_return_bps": -5.907541,
+        "trades": 16
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.5,
+        "mean_signed_return_bps": -1.369221,
+        "median_signed_return_bps": -0.354995,
+        "standard_error_bps": 2.01617,
+        "total_signed_return_bps": -21.907541,
+        "trades": 16
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.3125,
+        "mean_signed_return_bps": -5.369221,
+        "median_signed_return_bps": -4.354995,
+        "standard_error_bps": 2.01617,
+        "total_signed_return_bps": -85.907541,
+        "trades": 16
+      },
+      "horizon": "30m",
+      "maximum_entries": 1,
+      "threshold": 0.55,
+      "train_gross": {
+        "hit_rate": 0.619048,
+        "mean_signed_return_bps": 2.710626,
+        "median_signed_return_bps": 3.007506,
+        "standard_error_bps": 3.140036,
+        "total_signed_return_bps": 113.846281,
+        "trades": 42
+      }
+    },
+    {
+      "earliest_entry_et": "10:20:00",
+      "entry_policy": "confirmed_one",
+      "held_out_gross": {
+        "hit_rate": 0.533333,
+        "mean_signed_return_bps": -3.535294,
+        "median_signed_return_bps": 0.391905,
+        "standard_error_bps": 4.166385,
+        "total_signed_return_bps": -53.029403,
+        "trades": 15
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.466667,
+        "mean_signed_return_bps": -4.535294,
+        "median_signed_return_bps": -0.608095,
+        "standard_error_bps": 4.166385,
+        "total_signed_return_bps": -68.029403,
+        "trades": 15
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.466667,
+        "mean_signed_return_bps": -8.535294,
+        "median_signed_return_bps": -4.608095,
+        "standard_error_bps": 4.166385,
+        "total_signed_return_bps": -128.029403,
+        "trades": 15
+      },
+      "horizon": "120m",
+      "maximum_entries": 1,
+      "threshold": 0.55,
+      "train_gross": {
+        "hit_rate": 0.52381,
+        "mean_signed_return_bps": 6.935372,
+        "median_signed_return_bps": 4.776264,
+        "standard_error_bps": 6.665214,
+        "total_signed_return_bps": 291.285634,
+        "trades": 42
+      }
+    },
+    {
+      "earliest_entry_et": "10:20:00",
+      "entry_policy": "confirmed_one",
+      "held_out_gross": {
+        "hit_rate": 0.5,
+        "mean_signed_return_bps": -0.720726,
+        "median_signed_return_bps": 0.545597,
+        "standard_error_bps": 6.194249,
+        "total_signed_return_bps": -11.53161,
+        "trades": 16
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.5,
+        "mean_signed_return_bps": -1.720726,
+        "median_signed_return_bps": -0.454403,
+        "standard_error_bps": 6.194249,
+        "total_signed_return_bps": -27.53161,
+        "trades": 16
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.4375,
+        "mean_signed_return_bps": -5.720726,
+        "median_signed_return_bps": -4.454403,
+        "standard_error_bps": 6.194249,
+        "total_signed_return_bps": -91.53161,
+        "trades": 16
+      },
+      "horizon": "session_close",
+      "maximum_entries": 1,
+      "threshold": 0.55,
+      "train_gross": {
+        "hit_rate": 0.571429,
+        "mean_signed_return_bps": 2.698261,
+        "median_signed_return_bps": 15.898307,
+        "standard_error_bps": 9.725342,
+        "total_signed_return_bps": 113.326954,
+        "trades": 42
+      }
+    },
+    {
+      "earliest_entry_et": "10:20:00",
+      "entry_policy": "confirmed_one",
+      "held_out_gross": {
+        "hit_rate": 0.4,
+        "mean_signed_return_bps": -3.355907,
+        "median_signed_return_bps": -10.775941,
+        "standard_error_bps": 8.803617,
+        "total_signed_return_bps": -50.338601,
+        "trades": 15
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.4,
+        "mean_signed_return_bps": -4.355907,
+        "median_signed_return_bps": -11.775941,
+        "standard_error_bps": 8.803617,
+        "total_signed_return_bps": -65.338601,
+        "trades": 15
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.4,
+        "mean_signed_return_bps": -8.355907,
+        "median_signed_return_bps": -15.775941,
+        "standard_error_bps": 8.803617,
+        "total_signed_return_bps": -125.338601,
+        "trades": 15
+      },
+      "horizon": "next_open",
+      "maximum_entries": 1,
+      "threshold": 0.55,
+      "train_gross": {
+        "hit_rate": 0.666667,
+        "mean_signed_return_bps": 14.532671,
+        "median_signed_return_bps": 16.847694,
+        "standard_error_bps": 12.559291,
+        "total_signed_return_bps": 610.372201,
+        "trades": 42
+      }
+    },
+    {
+      "earliest_entry_et": "10:20:00",
+      "entry_policy": "confirmed_one",
+      "held_out_gross": {
+        "hit_rate": 0.428571,
+        "mean_signed_return_bps": -0.491246,
+        "median_signed_return_bps": -1.344649,
+        "standard_error_bps": 2.288165,
+        "total_signed_return_bps": -6.877441,
+        "trades": 14
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.428571,
+        "mean_signed_return_bps": -1.491246,
+        "median_signed_return_bps": -2.344649,
+        "standard_error_bps": 2.288165,
+        "total_signed_return_bps": -20.877441,
+        "trades": 14
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.214286,
+        "mean_signed_return_bps": -5.491246,
+        "median_signed_return_bps": -6.344649,
+        "standard_error_bps": 2.288165,
+        "total_signed_return_bps": -76.877441,
+        "trades": 14
+      },
+      "horizon": "30m",
+      "maximum_entries": 1,
+      "threshold": 0.65,
+      "train_gross": {
+        "hit_rate": 0.619048,
+        "mean_signed_return_bps": 1.589928,
+        "median_signed_return_bps": 3.193016,
+        "standard_error_bps": 2.656149,
+        "total_signed_return_bps": 66.776981,
+        "trades": 42
+      }
+    },
+    {
+      "earliest_entry_et": "10:20:00",
+      "entry_policy": "confirmed_one",
+      "held_out_gross": {
+        "hit_rate": 0.615385,
+        "mean_signed_return_bps": -2.292956,
+        "median_signed_return_bps": 2.213306,
+        "standard_error_bps": 4.656157,
+        "total_signed_return_bps": -29.808434,
+        "trades": 13
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.538462,
+        "mean_signed_return_bps": -3.292956,
+        "median_signed_return_bps": 1.213306,
+        "standard_error_bps": 4.656157,
+        "total_signed_return_bps": -42.808434,
+        "trades": 13
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.461538,
+        "mean_signed_return_bps": -7.292956,
+        "median_signed_return_bps": -2.786694,
+        "standard_error_bps": 4.656157,
+        "total_signed_return_bps": -94.808434,
+        "trades": 13
+      },
+      "horizon": "120m",
+      "maximum_entries": 1,
+      "threshold": 0.65,
+      "train_gross": {
+        "hit_rate": 0.512195,
+        "mean_signed_return_bps": 7.018568,
+        "median_signed_return_bps": 2.440316,
+        "standard_error_bps": 6.652946,
+        "total_signed_return_bps": 287.761298,
+        "trades": 41
+      }
+    },
+    {
+      "earliest_entry_et": "10:20:00",
+      "entry_policy": "confirmed_one",
+      "held_out_gross": {
+        "hit_rate": 0.5,
+        "mean_signed_return_bps": 0.163492,
+        "median_signed_return_bps": 1.696217,
+        "standard_error_bps": 6.577008,
+        "total_signed_return_bps": 2.288884,
+        "trades": 14
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.5,
+        "mean_signed_return_bps": -0.836508,
+        "median_signed_return_bps": 0.696217,
+        "standard_error_bps": 6.577008,
+        "total_signed_return_bps": -11.711116,
+        "trades": 14
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.428571,
+        "mean_signed_return_bps": -4.836508,
+        "median_signed_return_bps": -3.303783,
+        "standard_error_bps": 6.577008,
+        "total_signed_return_bps": -67.711116,
+        "trades": 14
+      },
+      "horizon": "session_close",
+      "maximum_entries": 1,
+      "threshold": 0.65,
+      "train_gross": {
+        "hit_rate": 0.595238,
+        "mean_signed_return_bps": 2.336188,
+        "median_signed_return_bps": 17.345954,
+        "standard_error_bps": 9.444463,
+        "total_signed_return_bps": 98.119896,
+        "trades": 42
+      }
+    },
+    {
+      "earliest_entry_et": "10:20:00",
+      "entry_policy": "confirmed_one",
+      "held_out_gross": {
+        "hit_rate": 0.384615,
+        "mean_signed_return_bps": -6.474436,
+        "median_signed_return_bps": -10.775941,
+        "standard_error_bps": 9.638187,
+        "total_signed_return_bps": -84.167673,
+        "trades": 13
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.384615,
+        "mean_signed_return_bps": -7.474436,
+        "median_signed_return_bps": -11.775941,
+        "standard_error_bps": 9.638187,
+        "total_signed_return_bps": -97.167673,
+        "trades": 13
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.384615,
+        "mean_signed_return_bps": -11.474436,
+        "median_signed_return_bps": -15.775941,
+        "standard_error_bps": 9.638187,
+        "total_signed_return_bps": -149.167673,
+        "trades": 13
+      },
+      "horizon": "next_open",
+      "maximum_entries": 1,
+      "threshold": 0.65,
+      "train_gross": {
+        "hit_rate": 0.571429,
+        "mean_signed_return_bps": 5.008069,
+        "median_signed_return_bps": 5.400781,
+        "standard_error_bps": 12.745542,
+        "total_signed_return_bps": 210.338883,
+        "trades": 42
+      }
+    },
+    {
+      "earliest_entry_et": "10:20:00",
+      "entry_policy": "confirmed_one",
+      "held_out_gross": {
+        "hit_rate": 0.444444,
+        "mean_signed_return_bps": 0.077786,
+        "median_signed_return_bps": -2.172847,
+        "standard_error_bps": 3.461746,
+        "total_signed_return_bps": 0.700078,
+        "trades": 9
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.444444,
+        "mean_signed_return_bps": -0.922214,
+        "median_signed_return_bps": -3.172847,
+        "standard_error_bps": 3.461746,
+        "total_signed_return_bps": -8.299922,
+        "trades": 9
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.444444,
+        "mean_signed_return_bps": -4.922214,
+        "median_signed_return_bps": -7.172847,
+        "standard_error_bps": 3.461746,
+        "total_signed_return_bps": -44.299922,
+        "trades": 9
+      },
+      "horizon": "30m",
+      "maximum_entries": 1,
+      "threshold": 0.75,
+      "train_gross": {
+        "hit_rate": 0.526316,
+        "mean_signed_return_bps": -0.855284,
+        "median_signed_return_bps": 1.075149,
+        "standard_error_bps": 2.727922,
+        "total_signed_return_bps": -32.500782,
+        "trades": 38
+      }
+    },
+    {
+      "earliest_entry_et": "10:20:00",
+      "entry_policy": "confirmed_one",
+      "held_out_gross": {
+        "hit_rate": 0.5,
+        "mean_signed_return_bps": -7.533501,
+        "median_signed_return_bps": -8.633159,
+        "standard_error_bps": 6.935473,
+        "total_signed_return_bps": -60.268009,
+        "trades": 8
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.5,
+        "mean_signed_return_bps": -8.533501,
+        "median_signed_return_bps": -9.633159,
+        "standard_error_bps": 6.935473,
+        "total_signed_return_bps": -68.268009,
+        "trades": 8
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.375,
+        "mean_signed_return_bps": -12.533501,
+        "median_signed_return_bps": -13.633159,
+        "standard_error_bps": 6.935473,
+        "total_signed_return_bps": -100.268009,
+        "trades": 8
+      },
+      "horizon": "120m",
+      "maximum_entries": 1,
+      "threshold": 0.75,
+      "train_gross": {
+        "hit_rate": 0.527778,
+        "mean_signed_return_bps": 6.998634,
+        "median_signed_return_bps": 7.40204,
+        "standard_error_bps": 7.70551,
+        "total_signed_return_bps": 251.950841,
+        "trades": 36
+      }
+    },
+    {
+      "earliest_entry_et": "10:20:00",
+      "entry_policy": "confirmed_one",
+      "held_out_gross": {
+        "hit_rate": 0.333333,
+        "mean_signed_return_bps": -7.654916,
+        "median_signed_return_bps": -0.905435,
+        "standard_error_bps": 8.163224,
+        "total_signed_return_bps": -68.894248,
+        "trades": 9
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.333333,
+        "mean_signed_return_bps": -8.654916,
+        "median_signed_return_bps": -1.905435,
+        "standard_error_bps": 8.163224,
+        "total_signed_return_bps": -77.894248,
+        "trades": 9
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.333333,
+        "mean_signed_return_bps": -12.654916,
+        "median_signed_return_bps": -5.905435,
+        "standard_error_bps": 8.163224,
+        "total_signed_return_bps": -113.894248,
+        "trades": 9
+      },
+      "horizon": "session_close",
+      "maximum_entries": 1,
+      "threshold": 0.75,
+      "train_gross": {
+        "hit_rate": 0.631579,
+        "mean_signed_return_bps": -0.741369,
+        "median_signed_return_bps": 9.345421,
+        "standard_error_bps": 10.25667,
+        "total_signed_return_bps": -28.172035,
+        "trades": 38
+      }
+    },
+    {
+      "earliest_entry_et": "10:20:00",
+      "entry_policy": "confirmed_one",
+      "held_out_gross": {
+        "hit_rate": 0.375,
+        "mean_signed_return_bps": -6.186728,
+        "median_signed_return_bps": -8.944585,
+        "standard_error_bps": 14.601125,
+        "total_signed_return_bps": -49.493828,
+        "trades": 8
+      },
+      "held_out_minus_1bp": {
+        "hit_rate": 0.375,
+        "mean_signed_return_bps": -7.186728,
+        "median_signed_return_bps": -9.944585,
+        "standard_error_bps": 14.601125,
+        "total_signed_return_bps": -57.493828,
+        "trades": 8
+      },
+      "held_out_minus_5bp": {
+        "hit_rate": 0.375,
+        "mean_signed_return_bps": -11.186728,
+        "median_signed_return_bps": -13.944585,
+        "standard_error_bps": 14.601125,
+        "total_signed_return_bps": -89.493828,
+        "trades": 8
+      },
+      "horizon": "next_open",
+      "maximum_entries": 1,
+      "threshold": 0.75,
+      "train_gross": {
+        "hit_rate": 0.526316,
+        "mean_signed_return_bps": 10.593836,
+        "median_signed_return_bps": 0.839503,
+        "standard_error_bps": 13.211737,
+        "total_signed_return_bps": 402.565762,
+        "trades": 38
+      }
+    }
+  ],
+  "schema_version": 1,
+  "selected_entry_policy": "early_two",
+  "selected_held_out_gross": {
+    "hit_rate": 0.392857,
+    "mean_signed_return_bps": -10.986285,
+    "median_signed_return_bps": -15.737449,
+    "standard_error_bps": 6.487792,
+    "total_signed_return_bps": -307.615982,
+    "trades": 28
+  },
+  "selected_held_out_minus_1bp": {
+    "hit_rate": 0.392857,
+    "mean_signed_return_bps": -11.986285,
+    "median_signed_return_bps": -16.737449,
+    "standard_error_bps": 6.487792,
+    "total_signed_return_bps": -335.615982,
+    "trades": 28
+  },
+  "selected_held_out_minus_5bp": {
+    "hit_rate": 0.392857,
+    "mean_signed_return_bps": -15.986285,
+    "median_signed_return_bps": -20.737449,
+    "standard_error_bps": 6.487792,
+    "total_signed_return_bps": -447.615982,
+    "trades": 28
+  },
+  "selected_horizon": "next_open",
+  "selected_threshold": 0.55,
+  "shuffled_direction_control": {
+    "hit_rate": 0.535714,
+    "mean_signed_return_bps": 11.422861,
+    "median_signed_return_bps": 10.36034,
+    "standard_error_bps": 6.459807,
+    "total_signed_return_bps": 319.840101,
+    "trades": 28
+  },
+  "source": {
+    "bars": 4638,
+    "first_bar": "2026-06-04T13:30:00+00:00",
+    "last_bar": "2026-08-28T16:25:26+00:00",
+    "retrieved_sha256": "661c55066d67718aa8afcc5f306f6aecd8b2fd9b1e0c175c01a50b8ad0accf94",
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=5m&range=60d&includePrePost=false&events=div%2Csplits"
+  },
+  "split": {
+    "held_out_first": "2026-08-05",
+    "held_out_last": "2026-08-28",
+    "method": "chronological sessions, first 70% selection and final 30% held out",
+    "train_first": "2026-06-04",
+    "train_last": "2026-08-04"
+  },
+  "stop_rule": "Run once for the frozen pre-window decision; do not retune on the competition week."
+}

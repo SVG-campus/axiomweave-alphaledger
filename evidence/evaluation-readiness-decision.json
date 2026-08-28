@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-08-24T21:01:01.1652383Z",
+  "question": "What is the highest-gain reversible extension while the organizer has not specified real-time paper evaluation versus historical replay?",
+  "assumptions": [
+    "The authenticated live hub identifies Options Alpha Agents but does not yet expose a detailed track brief.",
+    "The participant Discord contains no official organizer answer about the evaluation window or dataset.",
+    "A competition-ready agent may need either current Alpaca paper observations, a specified historical options window, or both.",
+    "Broker authentication, order submission, deployment, publication, and form submission remain separately gated.",
+    "Alpaca's official current documentation is authoritative for the pre-kickoff read-only API contract."
+  ],
+  "options": [
+    "abstain and wait for kickoff",
+    "add Alpaca authentication only",
+    "add a synthetic options replay only",
+    "add a structurally read-only Alpaca observer plus a manifest-bound replay boundary"
+  ],
+  "evidence": [
+    {
+      "source": "authenticated lablab live dashboard and participant Discord",
+      "retrieved_at": "2026-08-24T20:57:18.6203067Z",
+      "facts": [
+        "Options Alpha Agents is the only displayed track",
+        "submission opens at 2026-08-28T15:00:00Z",
+        "no official evaluation-window answer is visible"
+      ]
+    },
+    {
+      "source": "https://docs.alpaca.markets/us/reference/getaccount-1",
+      "retrieved_at": "2026-08-24",
+      "facts": [
+        "GET https://paper-api.alpaca.markets/v2/account returns paper account details"
+      ]
+    },
+    {
+      "source": "https://docs.alpaca.markets/us/v1.4.2/reference/optionchain",
+      "retrieved_at": "2026-08-24",
+      "facts": [
+        "GET https://data.alpaca.markets/v1beta1/options/snapshots/{underlying_symbol} returns quotes and Greeks",
+        "the free indicative feed is delayed or modified and must be labeled separately from OPRA"
+      ]
+    },
+    {
+      "source": "https://docs.alpaca.markets/us/docs/historical-option-data",
+      "retrieved_at": "2026-08-24",
+      "facts": [
+        "Alpaca offers historical options data only from February 2024 onward",
+        "indicative and subscribed OPRA evidence must not be conflated"
+      ]
+    },
+    {
+      "source": "local verification receipt",
+      "facts": [
+        "33 tests pass",
+        "the options engine is C1 on frozen synthetic inputs",
+        "zero broker requests and zero external model calls were made"
+      ]
+    }
+  ],
+  "decision": "Add a named-method, GET-only Alpaca paper observer that cannot express an order mutation, plus a frozen-manifest options replay whose input digest, controls, and claim ceiling fail closed on tampering. Expose both as evaluation readiness, not as official evaluation or alpha evidence.",
+  "claim_ceiling": "C1 mechanics until an organizer-approved historical dataset or prospective paper window is frozen and independently evaluated",
+  "falsifiers": [
+    "Any public client method can issue POST, PATCH, PUT, or DELETE.",
+    "Any non-paper trading host or non-Alpaca data host is accepted.",
+    "Credentials, account ID, or raw secret headers appear in a receipt, dashboard, log, or repository file.",
+    "A changed replay observation passes the original manifest digest.",
+    "Two runs on the same frozen replay inputs produce different decision metrics.",
+    "The new path is described as official evaluation, profitability, or market evidence."
+  ],
+  "negative_controls": [
+    "cash/abstain replay",
+    "unguarded proposer replay",
+    "fixed-seed shuffled settlements",
+    "manifest-tampering rejection",
+    "live-host rejection",
+    "missing-credentials rejection",
+    "blocked or under-permissioned account reconciliation"
+  ],
+  "budget": {
+    "cash_spend": 0,
+    "external_api_calls": 0,
+    "broker_orders": 0,
+    "credentials_loaded": 0,
+    "implementation_loops": 2,
+    "regression_budget": 0
+  },
+  "stop_rule": "Stop when the read-only observer, redacted reconciliation receipt, manifest-bound replay, named controls, dashboard readiness view, and full verifier pass. Defer real credentials, external data, tuning, publication, deployment, recording, and submission to their explicit active-phase gates."
+}

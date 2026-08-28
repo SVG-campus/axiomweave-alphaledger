@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-08-28",
+  "question": "How should AlphaLedger trade and stop during the organizer-defined P&L window?",
+  "assumptions": [
+    "Erika is speaking from an official Alpaca organizer account in the authenticated lablab.ai Discord.",
+    "The account must be new and its competition starting balance must be set to exactly $100,000.",
+    "The final score is a raw account-equity snapshot at Friday 2026-09-04 09:30 America/New_York.",
+    "The options market has no regular-session opportunity before the Friday 09:30 cutoff.",
+    "The organizer has not yet specified how pre-open option marks or Thursday-expiry exercise, assignment, and settlement feed the raw-equity snapshot."
+  ],
+  "options": [
+    "trade continuously and keep all positions open through the cutoff",
+    "trade Monday through Thursday and force every position flat before Thursday close",
+    "trade Monday through Thursday with a default Thursday flatten and a separately evidenced hold-through-cutoff override",
+    "abstain from the competition account"
+  ],
+  "evidence": [
+    {
+      "source": "authenticated lablab.ai Discord screenshot of Erika (Alpaca)",
+      "path": "evidence/organizer-pnl-window-discord.png",
+      "sha256": "97D12B6BFB5B32303F65149FB28DCA19EEADB61040264AEF2F3FBFD243C9A362",
+      "captured_local_date": "2026-08-28",
+      "exact_visible_text": "We start measuring P&L Mon Aug 31 -9:30 a.m. ET to Sep 4 9:30 am ET make sure to open a new account",
+      "claim_grade": "C2 observational organizer evidence"
+    },
+    {
+      "source": "authenticated lablab.ai Discord screenshot of Erika (Alpaca)",
+      "path": "evidence/organizer-raw-equity-snapshot-discord.png",
+      "sha256": "63FF60719B42FA86D03F64C7075089AE205D02B33BE5A8959E7319629F4F6D64",
+      "captured_local_date": "2026-08-28",
+      "question_context": "Will Thursday-expiry overnight cash settlement be included in the Sep 4 9:30 measurement, or is it a raw equity snapshot at that instant?",
+      "exact_visible_reply": "hi raw equity snapshot",
+      "claim_grade": "C2 observational organizer evidence"
+    },
+    {
+      "source": "current authenticated event page",
+      "retrieved_local_date": "2026-08-28",
+      "facts": [
+        "final competition account must be new",
+        "starting balance must be $100,000",
+        "options are required",
+        "Alpaca paper account ID is required for judging"
+      ],
+      "claim_grade": "C2 authenticated platform observation"
+    }
+  ],
+  "decision": "Run one deterministic controller against the new $100,000 paper account. Evaluate from Monday 09:30 ET, permit at most one C0 exploratory entry from 10:20 through 14:30 ET on Monday through Thursday, close within 45 minutes unless a smaller profit or loss boundary fires first, and make Thursday 15:45 ET the default forced-flat deadline. A hold-through-cutoff path remains disabled unless the organizer or a reproducible paper-account probe resolves option marking and Thursday-expiry settlement without ambiguity.",
+  "competition_window": {
+    "start_utc": "2026-08-31T13:30:00Z",
+    "end_utc": "2026-09-04T13:30:00Z",
+    "market_timezone": "America/New_York",
+    "eligible_regular_sessions": [
+      "2026-08-31",
+      "2026-09-01",
+      "2026-09-02",
+      "2026-09-03"
+    ],
+    "default_force_flat_utc": "2026-09-03T19:45:00Z",
+    "friday_regular_session_eligible": false
+  },
+  "objective": "Maximize expected raw-equity P&L during the frozen window while preserving account survival, reproducibility, and a judge-visible proof trail.",
+  "risk_budget": {
+    "starting_equity_usd": 100000,
+    "maximum_loss_per_plan_usd": 250,
+    "maximum_open_plans": 1,
+    "maximum_aggregate_open_loss_usd": 250,
+    "maximum_daily_drawdown_usd": 500,
+    "maximum_total_drawdown_usd": 1000,
+    "maximum_new_entries_per_session": 1,
+    "underlyings": [
+      "SPY"
+    ],
+    "cash_spend_for_build_usd": 0,
+    "cloud_runtime_soft_budget_usd": 10
+  },
+  "claim_ceiling": "C1 for locally verified mechanics; C2 for organizer/platform facts; C0 for expected profit or likelihood of winning until independently observed competition results exist.",
+  "falsifiers": [
+    "The account is not new, is not at $100,000, or has a pre-existing position or order at the baseline receipt.",
+    "Any live-money endpoint, unsupported option shape, stale evidence, unknown account state, or excess loss can reach submission.",
+    "The system enters before the measurement window, after its last-entry time, during a frozen event blackout, or after the stop boundary.",
+    "The final option valuation or Thursday-expiry settlement mechanics remain ambiguous and the system nevertheless holds through the default flatten boundary.",
+    "A strategy is selected because it looked best on the same sample used to report performance."
+  ],
+  "negative_controls": [
+    "cash_abstain",
+    "fixed_one_contract_baseline",
+    "stale_bars",
+    "unsorted_bars",
+    "no_ack_no_paper_request",
+    "forced_flatten_clock"
+  ],
+  "strategy_selection_evidence": [
+    {
+      "path": "evidence/signal-benchmark-receipt.json",
+      "result": "No 5-minute route cleared the held-out promotion gate; the least-weak fallback is C0 exploratory only."
+    },
+    {
+      "path": "evidence/hourly-regime-benchmark-receipt.json",
+      "result": "The validation candidate failed the untouched test; no hourly route was promoted."
+    }
+  ],
+  "cost_or_risk_budget": "Use no paid data or model calls for the build; cap the isolated GCP competition runner at a $10 expected spend and do not touch pre-existing resources; cap modeled account drawdown at 1% because no signal route cleared its promotion gate.",
+  "stop_rule": "Stop new entries immediately on the daily or total drawdown limit, stale or inconsistent evidence, account mismatch, reconciliation failure, order-state ambiguity, a second active writer, organizer-rule conflict, or 2026-09-03 15:45 ET. Cancel safely and reconcile before any further action."
+}

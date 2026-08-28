@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-08-24T20:23:58.992Z",
+  "question": "Should AlphaLedger remain an equity-only agent or extend to the authenticated live track before kickoff?",
+  "assumptions": [
+    "The authenticated live dashboard is the strongest current event-state source.",
+    "Options Alpha Agents is the only displayed track, but its detailed brief may not be released until kickoff.",
+    "The public challenge still permits Alpaca trading agents broadly.",
+    "Options introduce tail, liquidity, expiration, assignment, and multi-leg execution risks that must be visible rather than hidden behind a predictor."
+  ],
+  "options": [
+    "abstain until kickoff",
+    "retain the equity-only agent",
+    "build a generic directional options predictor",
+    "extend the verified baseline with a defined-risk options agent and optional structured AI critic"
+  ],
+  "evidence": [
+    {
+      "source": "authenticated lablab live dashboard",
+      "retrieved_at": "2026-08-24T20:23:58.992Z",
+      "facts": [
+        "status upcoming",
+        "track Options Alpha Agents",
+        "submission window 2026-08-28T15:00:00Z to 2026-09-04T15:00:00Z"
+      ]
+    },
+    {
+      "source": "https://docs.alpaca.markets/us/docs/options-trading",
+      "facts": [
+        "options are enabled by default in Alpaca paper accounts",
+        "option orders use the Orders API",
+        "option quantity must be whole and notional must be omitted"
+      ]
+    },
+    {
+      "source": "https://docs.alpaca.markets/us/docs/options-level-3-trading",
+      "facts": [
+        "paper supports multi-leg options orders",
+        "mleg payloads contain explicit legs and position intents"
+      ]
+    },
+    {
+      "source": "current local baseline receipt",
+      "facts": [
+        "16 pre-extension tests passed",
+        "equity-only mechanics were C1",
+        "no options or actual model integration existed"
+      ]
+    }
+  ],
+  "decision": "Extend rather than replace the baseline: lead with one-contract, capped-loss bull call debit-spread planning; make stale data, missing Greeks, liquidity, expiration, account state, and maximum loss hard gates; keep an optional OpenAI structured advisory lane veto-only and default-off.",
+  "claim_ceiling": "C1 mechanics on a frozen synthetic option chain",
+  "falsifiers": [
+    "The kickoff track brief excludes or materially changes the options requirement.",
+    "The installed Alpaca schema rejects the generated multi-leg shape.",
+    "Any model output can override a deterministic gate.",
+    "Any naked or unlimited-loss options shape reaches an order plan.",
+    "Any stale, illiquid, missing-Greeks, excessive-loss, live-mode, underfunded, or unreconciled-order scenario passes.",
+    "Any proposal can understate quote-derived economics without forcing abstention."
+  ],
+  "negative_controls": [
+    "cash/abstain",
+    "verified equity baseline",
+    "model-unavailable fail-closed advisory",
+    "optimistic advisory against a policy-invalid spread"
+  ],
+  "budget": {
+    "cash_spend": 0,
+    "external_model_calls": 0,
+    "broker_orders": 0,
+    "synthetic_contract_quantity": 1,
+    "synthetic_max_loss_dollars": 25,
+    "implementation_loops": 2
+  },
+  "stop_rule": "Stop feature expansion after the valid options plan, named falsifiers, shared ledger, dashboard path, and submission narrative verify; wait for the kickoff brief and paper-account read-only reconciliation before broker work.",
+  "verification": {
+    "tests_run": 33,
+    "tests_failed": 0,
+    "browser_valid_path": "CALL DEBIT / $20 maximum loss / PASS / SIMULATED",
+    "browser_falsifiers": [
+      "stale option evidence produces ABSTAIN with no payload",
+      "unavailable optional AI advisory produces ABSTAIN"
+    ],
+    "ledger_chain": "VERIFIED",
+    "claim_ceiling": "C1"
+  }
+}

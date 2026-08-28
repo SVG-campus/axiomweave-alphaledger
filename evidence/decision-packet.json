@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-08-24",
+  "objective": "Build the strongest demoable, original, safe, and rules-aligned Alpaca AI trading-agent hackathon entry without touching real money or existing production systems.",
+  "authority": {
+    "allowed": [
+      "read-only research",
+      "zero-dollar local implementation",
+      "deterministic synthetic verification"
+    ],
+    "excluded": [
+      "live trading",
+      "paper-order submission without a new explicit confirmation",
+      "broker authentication",
+      "public deployment",
+      "hackathon form submission",
+      "cloud mutation"
+    ]
+  },
+  "frozen_route": {
+    "team_name": "AxiomWeave AlphaLedger",
+    "tagline": "Proof before profit.",
+    "product": "An evidence-gated, abstention-first Alpaca options agent that builds capped-loss multi-leg paper-order plans, gives deterministic policy final authority, and records passes and refusals in a tamper-evident ledger.",
+    "topology": "single-agent baseline with a deterministic critic and an optional structured AI advisory lane; no parallel worker DAG",
+    "broker_surface": "simulation and documented Alpaca mleg payload in the public demo; all broker submission paths default-off"
+  },
+  "material_decisions": [
+    {
+      "question": "What differentiator best fits the challenge and visible competitive field?",
+      "assumptions": [
+        "Judges reward technology integration, presentation, business value, and originality.",
+        "A seven-day event favors a clear working golden path over broad strategy optimization.",
+        "Visible teams already cover generic multi-agent debate, prediction, and guardrails."
+      ],
+      "options": [
+        "generic multi-agent predictor",
+        "reinforcement-learning optimizer",
+        "explainable dashboard only",
+        "abstain",
+        "evidence-gated AlphaLedger"
+      ],
+      "evidence": [
+        "lablab event page and indexed tabs, retrieved 2026-08-24",
+        "visible current team pages, retrieved 2026-08-24",
+        "prior Trading Logic task 019fef0d-6047-7c51-882c-241b145eb3f2",
+        "local AxiomWeave evidence protocol"
+      ],
+      "decision": "Build evidence-gated AlphaLedger with first-class abstention and negative controls.",
+      "claim_ceiling": "C0 until tests; C1 after deterministic verification",
+      "falsifier": "A judge cannot understand the proof-before-profit value in 30 seconds, or the core stale-evidence abstention demo fails.",
+      "cost_risk_budget": "Zero dollars; local simulation only; no credentials; one golden path.",
+      "stop_rule": "Stop feature expansion once pass, stale-data abstention, ledger verification, and replay controls work end-to-end."
+    },
+    {
+      "question": "What may authorize an order?",
+      "assumptions": [
+        "Model output may be malformed, overconfident, or based on stale evidence.",
+        "Paper trading is the event's required development environment."
+      ],
+      "options": [
+        "model-direct execution",
+        "human confirmation only",
+        "deterministic policy final authority",
+        "no execution adapter"
+      ],
+      "evidence": [
+        "Alpaca CLI warns that agent commands execute without interactive confirmation.",
+        "Prior local SPY canary uses a $25 new-order and $50 aggregate exposure boundary."
+      ],
+      "decision": "Deterministic risk policy is final; public demo remains simulation-only; optional paper CLI adapter has two locks.",
+      "claim_ceiling": "C1 mechanics",
+      "falsifier": "Any non-paper broker mode, stale input, loss stop, excess exposure, incomplete manifest, or unreconciled order reaches execution.",
+      "cost_risk_budget": "$25 candidate notional and $50 gross exposure in the frozen paper design; $0 actually submitted in this build.",
+      "stop_rule": "Fail closed on every unknown or inconsistent state."
+    },
+    {
+      "question": "What evaluation is honest at build time?",
+      "assumptions": [
+        "Synthetic paths test mechanics, not market performance.",
+        "Historical optimization can reward hindsight."
+      ],
+      "options": [
+        "headline backtest return",
+        "synthetic mechanics only",
+        "no evaluation",
+        "held-out paper trial now"
+      ],
+      "evidence": [
+        "AxiomWeave claim-grade protocol",
+        "prior task explicitly separates simulation, paper fills, and live evidence"
+      ],
+      "decision": "Use a frozen synthetic replay with buy-and-hold, cash, and shuffled-return controls; cap claims at C1.",
+      "claim_ceiling": "C1",
+      "falsifier": "Replay is nondeterministic, controls are missing, or any result is described as expected profit.",
+      "cost_risk_budget": "One fixed seed, no parameter sweep, no paid data.",
+      "stop_rule": "Do not tune thresholds on the demo replay."
+    },
+    {
+      "question": "How should the authenticated Options Alpha Agents track change the route?",
+      "assumptions": [
+        "The authenticated live dashboard is authoritative for current phase and track metadata.",
+        "A longer options-track brief may be released at kickoff.",
+        "A capped-loss options structure is safer, clearer, and more falsifiable than a naked or unlimited-loss candidate."
+      ],
+      "options": [
+        "wait until kickoff",
+        "retain equity only",
+        "generic directional options predictor",
+        "defined-risk options extension with veto-only AI advice"
+      ],
+      "evidence": [
+        "authenticated live dashboard retrieved 2026-08-24T20:23:58.992Z",
+        "Alpaca options trading and Level 3 multi-leg paper documentation",
+        "16-test pre-extension baseline receipt",
+        "evidence/options-track-decision.json"
+      ],
+      "decision": "Lead with a one-contract bull call debit-spread planner capped at $25 quote-derived maximum loss; independently recompute debit, width, breakeven, maximum loss, and maximum profit; retain equity as the simplest baseline; make optional OpenAI structured advice default-off and veto-only.",
+      "claim_ceiling": "C1 mechanics on frozen synthetic options inputs",
+      "falsifier": "Any unsupported, unlimited-loss, stale, illiquid, missing-Greeks, over-budget, underfunded, live-mode, economics-tampered, or unreconciled-order candidate produces an order plan, or the kickoff brief invalidates the inferred route.",
+      "cost_risk_budget": "Zero dollars, zero external model calls, zero broker orders, one synthetic contract, $25 maximum modeled loss.",
+      "stop_rule": "Stop after the options golden path and named falsifiers pass end to end; wait for kickoff schema and read-only paper reconciliation before broker work."
+    },
+    {
+      "question": "How should the agent prepare for the unresolved real-time paper versus historical replay evaluation method?",
+      "assumptions": [
+        "No organizer answer or detailed pre-kickoff track brief is currently available.",
+        "Real-time paper observation and historical replay need one consistent governed decision boundary.",
+        "Credential use and broker writes remain separately authorized."
+      ],
+      "options": [
+        "wait for kickoff",
+        "authenticate the paper account now",
+        "build replay only",
+        "build a GET-only observer plus manifest-bound replay"
+      ],
+      "evidence": [
+        "authenticated Discord recheck at 2026-08-24T20:57:18.6203067Z",
+        "official Alpaca account, option-contract, option-chain, and historical-options documentation",
+        "evidence/evaluation-readiness-decision.json"
+      ],
+      "decision": "Implement a redirect-rejecting, named-method GET-only Alpaca paper observer and a digest-bound options replay with unguarded, cash, and fixed-seed shuffled controls; expose both as readiness, not official evaluation.",
+      "claim_ceiling": "C1 mechanics; historical evidence is at most C2 until independence is established",
+      "falsifier": "Any mutation method or live trading host is reachable, credentials or account ID enter a receipt, manifest tampering passes, replay metrics are nondeterministic, or synthetic payoff is described as alpha.",
+      "cost_risk_budget": "Two local loops, zero dollars, zero credentials, zero external API calls, zero orders, zero regressions.",
+      "stop_rule": "Stop after the observer, redacted reconciliation, manifest replay, dashboard, tests, and receipt verify; defer actual paper observation to the active-phase gate."
+    }
+  ]
+}
