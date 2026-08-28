@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "observed_at": "2026-08-28T17:25:00Z",
+  "observed_at": "2026-08-28T17:32:00Z",
   "question": "Did the isolated public demo deploy without activating Alpaca paper trading or modifying pre-existing named resources?",
   "assumptions": [
     "The active gcloud identity is authorized for project-757198e6-df23-4e75-b08.",
@@ -10,7 +10,7 @@
   "selected_route": "One new e2-micro VM in a new custom VPC serves the credential-free Streamlit demo through Nginx. A separate non-login runner remains disabled until private secret versions, GET-only reconciliation, and explicit paper-order acknowledgement.",
   "public_repository": "https://github.com/SVG-campus/axiomweave-alphaledger",
   "deployed_source_commit": "3f9bcc021b533a3057b5c8aca3e02d5efa8e7020",
-  "current_public_repository_commit_at_receipt": "26c1e1b9746f09a1715395042b94cf91e18857f4",
+  "current_public_repository_commit_at_receipt": "ead7ce690f36ad165128d50e804c8c4f3881f569",
   "demo_url": "http://34.27.11.180",
   "resources_created": {
     "vm": "alphaledger-hackathon-20260828",
@@ -36,6 +36,9 @@
     "streamlit_health": "HTTP 200 ok",
     "streamlit_host_config": "HTTP 200",
     "demo_service": "active",
+    "demo_network_policy": "deny all IP access except localhost",
+    "demo_capability_bounding_set": "empty",
+    "demo_private_devices": true,
     "runner_service": "disabled and inactive",
     "runner_env": "absent",
     "paper_enable_flag": "absent",
