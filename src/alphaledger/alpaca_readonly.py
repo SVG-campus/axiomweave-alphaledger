@@ -5,6 +5,7 @@ import json
 import math
 import os
 import re
+import time
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from typing import Any, Mapping, Protocol
@@ -182,6 +183,9 @@ class AlpacaReadOnlyObserver:
         }
     )
     _UNDERLYING = re.compile(r"^[A-Z][A-Z0-9.]{0,9}$")
+    _MAX_OPTION_PAGES = 10
+    _MAX_OPTION_RECORDS = 10000
+    _OPTION_PAGINATION_SECONDS = 20.0
 
     def __init__(
         self,
@@ -243,6 +247,103 @@ class AlpacaReadOnlyObserver:
     def read_account(self) -> ReadOnlyResponse:
         return self._get(self.PAPER_BASE, "/v2/account")
 
+    def _get_option_pages(
+        self,
+        base: str,
+        path: str,
+        params: Mapping[str, str | int | float | bool],
+        *,
+        collection: str,
+    ) -> ReadOnlyResponse:
+        """Return complete options evidence, never a silently truncated first page.
+
+        Filters stay identical on every GET; only the opaque page token changes.
+        A page, record, or elapsed-time cap, malformed page, duplicate symbol,
+        repeated token, or transport failure aborts the whole observation.
+        Multi-page payload hashes bind the merged set and each original page.
+        """
+        if not (
+            (base == self.PAPER_BASE and path == "/v2/options/contracts" and collection == "option_contracts")
+            or (
+                base == self.DATA_BASE
+                and re.fullmatch(r"/v1beta1/options/snapshots/[A-Z][A-Z0-9.]{0,9}", path)
+                and collection == "snapshots"
+            )
+        ):
+            raise RuntimeError("Pagination is outside the frozen options GET allowlist")
+        started = time.monotonic()
+        query = dict(params)
+        if "page_token" in query:
+            raise RuntimeError("Complete options observation must start at the first page")
+        seen_tokens: set[str] = set()
+        seen_symbols: set[str] = set()
+        contracts: list[Any] = []
+        snapshots: dict[str, Any] = {}
+        pages: list[dict[str, str]] = []
+        first_payload: dict[str, Any] | None = None
+        for _ in range(self._MAX_OPTION_PAGES):
+            if time.monotonic() - started >= self._OPTION_PAGINATION_SECONDS:
+                raise RuntimeError("Options pagination elapsed-time budget exceeded")
+            response = self._get(base, path, query)
+            if time.monotonic() - started >= self._OPTION_PAGINATION_SECONDS:
+                raise RuntimeError("Options pagination elapsed-time budget exceeded")
+            payload = response.payload
+            if not isinstance(payload, dict):
+                raise RuntimeError("Options page must be a JSON object")
+            if payload.get("page_token") not in (None, ""):
+                raise RuntimeError("Options page contains ambiguous pagination metadata")
+            values = payload.get(collection)
+            if collection == "option_contracts":
+                if not isinstance(values, list):
+                    raise RuntimeError("Options contracts page must contain an array")
+                symbols = [row.get("symbol") if isinstance(row, dict) else None for row in values]
+            else:
+                if not isinstance(values, dict):
+                    raise RuntimeError("Options snapshots page must contain an object")
+                symbols = list(values)
+            for symbol in symbols:
+                if not isinstance(symbol, str) or not symbol.strip():
+                    raise RuntimeError("Options page contains a missing symbol")
+                if symbol in seen_symbols:
+                    raise RuntimeError("Options pagination contains a duplicate symbol")
+                seen_symbols.add(symbol)
+            if len(seen_symbols) > self._MAX_OPTION_RECORDS:
+                raise RuntimeError("Options pagination record budget exceeded")
+            token = payload.get("next_page_token")
+            if token not in (None, ""):
+                if not isinstance(token, str) or not token.strip() or len(token) > 8192:
+                    raise RuntimeError("Options pagination token is malformed")
+                if token in seen_tokens:
+                    raise RuntimeError("Options pagination token repeated")
+                if not values:
+                    raise RuntimeError("Options pagination returned an empty intermediate page")
+                seen_tokens.add(token)
+            if first_payload is None:
+                first_payload = dict(payload)
+            if collection == "option_contracts":
+                contracts.extend(values)
+            else:
+                snapshots.update(values)
+            pages.append({"payload_sha256": response.payload_sha256, "observed_at": response.observed_at})
+            if token in (None, ""):
+                if len(pages) == 1:
+                    return response
+                merged = dict(first_payload)
+                merged.pop("page_token", None)
+                merged["next_page_token"] = None
+                merged[collection] = contracts if collection == "option_contracts" else snapshots
+                merged["_pagination"] = {"complete": True, "page_count": len(pages), "pages": pages}
+                return ReadOnlyResponse(
+                    endpoint=response.endpoint,
+                    observed_at=response.observed_at,
+                    request_id=None,
+                    payload_sha256=_payload_hash(merged),
+                    record_count=_record_count(merged),
+                    payload=merged,
+                )
+            query["page_token"] = token
+        raise RuntimeError("Options pagination page budget exceeded")
+
     def read_positions(self) -> ReadOnlyResponse:
         return self._get(self.PAPER_BASE, "/v2/positions")
 
@@ -269,7 +370,7 @@ class AlpacaReadOnlyObserver:
             raise ValueError("Contract limit is outside Alpaca's documented range")
         if option_type not in {"call", "put"}:
             raise ValueError("Option type must be call or put")
-        return self._get(
+        return self._get_option_pages(
             self.PAPER_BASE,
             "/v2/options/contracts",
             {
@@ -280,6 +381,7 @@ class AlpacaReadOnlyObserver:
                 "expiration_date_lte": expiration_date_lte,
                 "limit": limit,
             },
+            collection="option_contracts",
         )
 
     def read_stock_snapshot(self, underlying_symbol: str, *, feed: str = "iex") -> ReadOnlyResponse:
@@ -355,7 +457,7 @@ class AlpacaReadOnlyObserver:
             raise ValueError("Option strike window is invalid")
         if not 1 <= limit <= 1000:
             raise ValueError("Snapshot limit is outside Alpaca's documented range")
-        return self._get(
+        return self._get_option_pages(
             self.DATA_BASE,
             f"/v1beta1/options/snapshots/{symbol}",
             {
@@ -367,6 +469,7 @@ class AlpacaReadOnlyObserver:
                 "strike_price_lte": strike_price_lte,
                 "limit": limit,
             },
+            collection="snapshots",
         )
 
     def observe_option_chain(
@@ -382,7 +485,7 @@ class AlpacaReadOnlyObserver:
         options_feed: str = "indicative",
         as_of: datetime | None = None,
     ) -> Any:
-        """Run the three named GETs and return a redacted, typed normalization receipt."""
+        """Read the three named datasets with bounded, complete options pagination."""
 
         from .alpaca_normalize import normalize_option_chain
 
