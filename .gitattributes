@@ -1,0 +1,3 @@
+# Preserve artifact byte offsets and checksums on Windows and Linux.
+*.pdf binary
+*.pptx binary

@@ -41,3 +41,6 @@ class DashboardSmokeTests(unittest.TestCase):
             for item in collection
         )
         self.assertIn("paper-order payload but never sends it", visible_text)
+        self.assertIn("Verified operational snapshot", visible_text)
+        self.assertIn("not a continuous live feed", visible_text)
+        self.assertTrue({"Paper equity", "Snapshot daily P&L", "Orders to date"} <= metric_labels)

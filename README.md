@@ -20,6 +20,18 @@ spread—and every refusal—into a replayable evidence receipt.
 
 The public Streamlit app never receives Alpaca credentials and cannot send an order.
 
+## Current operation and incident transparency
+
+The private runner is activated in paper mode. The public demo now includes a timestamped,
+redacted operational snapshot, not a continuous account feed. On Aug 31 an incomplete
+options-contract catalog caused repeated safe refusals. Complete bounded pagination was deployed
+and verified; first logged failure to verified recovery took **36m 40s**. No orders or account
+loss were observed through that recovery check. The strategy and risk limits were unchanged.
+
+See the [incident timeline](docs/INCIDENT_2026-08-31_PAGINATION.md),
+[public snapshot](evidence/public-operation-status.json), and
+[resource update checklist](docs/RESOURCE_UPDATE_CHECKLIST.md).
+
 ```powershell
 cd path\to\axiomweave-alphaledger
 python .\scripts\verify.py
@@ -93,7 +105,9 @@ or an invalid clock phase all fail closed.
   authenticated screenshot hashes.
 - **C0:** profitability, future fills, mark quality, competition rank, and production safety.
 
-No broker request or order was sent while building or verifying this repository.
+Local regression tests use synthetic/fake inputs and send no broker orders. Separately authorized
+operational checks use authenticated paper-only GETs; the activated private runner may submit
+paper orders during the frozen window. Use the timestamped operational snapshot for observed results.
 
 ## Deployment and private activation
 
@@ -116,6 +130,7 @@ script is the only prepared secret-ingestion route. Paper order submission addit
 - [Submission copy](submission/submission-copy.md)
 - [Video script](submission/video-script.md)
 - [Social copy](submission/social-posts.md)
+- [Current presentation and recording package](submission/PRESENTATION_STATUS.md)
 
 Educational hackathon software only; not investment advice. Paper trading is a simulation and does
 not reproduce every feature of live markets. MIT licensed.

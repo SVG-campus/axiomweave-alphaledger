@@ -58,6 +58,12 @@ does not allow a new entry before 10:20.
 
 ## Incident rules
 
+- **Pagination incident, Aug 31:** repaired with bounded complete-page retrieval; see the
+  [measured timeline](INCIDENT_2026-08-31_PAGINATION.md). Do not bypass incomplete-data rejection.
+- **Recurring data errors:** distinguish them from neutral signals and risk refusals; preserve
+  the first occurrence, detection, diagnosis, deployment, and verified recovery timestamps.
+- **Every material change:** follow [resource synchronization](RESOURCE_UPDATE_CHECKLIST.md).
+
 - **Ambiguous broker response:** do not retry blindly; reconcile by deterministic client ID.
 - **Pending order older than three minutes:** cancel only after exact one-to-one order lookup.
 - **Close failure:** bounded unique retry IDs 0–9; keep reconciling; do not open new risk.

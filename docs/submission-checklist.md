@@ -20,10 +20,11 @@
 
 - [x] Create/freeze the public GitHub repository and immutable commit
 - [x] Provision the new isolated GCP resources from that commit
-- [ ] Enter paper API key, secret, and account ID through the hidden local prompt
-- [ ] Pass GET-only fresh-account and Level 3 reconciliation
-- [ ] Type the explicit paper-order acknowledgement when ready
-- [ ] Verify weekend idle state and Monday preflight
+- [x] Enter paper API key, secret, and account ID through the hidden local prompt
+- [x] Pass GET-only fresh-account and Level 3 reconciliation
+- [x] Type the explicit paper-order acknowledgement when ready
+- [x] Verify weekend idle state and Monday preflight
+- [x] Repair and document Aug 31 options pagination; preserve the measured recovery timeline
 - [ ] Record/export the final <=5-minute MP4 and upload to YouTube
 - [ ] Upload deck PDF, cover, links, one-page write-up, and private account ID
 - [ ] Publish social posts only after final links exist

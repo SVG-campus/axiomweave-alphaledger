@@ -59,5 +59,8 @@ then may enter GET-only observe mode. Paper-order mode requires the exact human 
 
 Passing local verification establishes C1 deterministic mechanics and falsifiers, not profitability
 or production safety. Authenticated organizer screenshots support the C2 timing and EOD scoring
-observations. Profitability, fills, broker mark construction, and winning probability remain C0. No authenticated
-broker request or paper order was sent during development or verification.
+observations. Authenticated paper-only checks now establish timestamped operational observations,
+not future performance. The Aug 31 incomplete-catalog incident was repaired through bounded complete
+pagination, with regression tests and a measured 36m 40s first-failure-to-verification interval.
+No orders or account loss were observed through recovery. Profitability, future fills, broker mark
+construction, and winning probability remain unproven. See the public incident and status receipts.

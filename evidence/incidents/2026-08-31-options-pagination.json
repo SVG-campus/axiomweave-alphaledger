@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "incident_id": "2026-08-31-options-pagination",
+  "status": "repaired",
+  "question": "Can complete options pagination restore the evidence path without changing the frozen trading policy?",
+  "assumptions": [
+    "The same pinned paper account remains authorized",
+    "The frozen risk and competition policy remain authoritative",
+    "A successful read-only data probe does not prove future fills or profit"
+  ],
+  "options": [
+    "Restart only (rejected: deterministic loader defect)",
+    "Increase one-page size only (rejected: may still truncate)",
+    "Bounded complete pagination with retained rejection gates (selected)"
+  ],
+  "evidence": {
+    "first_failure_at": "2026-08-31T14:21:58.269114+00:00",
+    "monitor_detected_at": "2026-08-31T14:33:59.811403+00:00",
+    "diagnosed_at": "2026-08-31T14:35:11.314975+00:00",
+    "repair_work_observed_at": "2026-08-31T14:45:46.2594278+00:00",
+    "local_tests_at": "2026-08-31T14:50:05.959063+00:00",
+    "candidate_check": {
+      "started_at": "2026-08-31T14:55:21.744119+00:00",
+      "candidate_sha256": "66edddb70e8d326f06becdb0515e3a67a7bac71b1d30a69719463e1e2260d394",
+      "read_only": true,
+      "signal": {
+        "direction": "neutral",
+        "score": -0.279046
+      },
+      "normalized": {
+        "contracts": 224,
+        "skipped": 817,
+        "underlying_age_seconds": 2
+      },
+      "risk": {
+        "approved": false,
+        "reasons": [
+          "Current signal is neutral; the controller must not propose an entry."
+        ]
+      },
+      "normalization_passed": true,
+      "pages": [
+        {
+          "endpoint": "https://paper-api.alpaca.markets/v2/options/contracts",
+          "records": 1041,
+          "pages": 2,
+          "payload_sha256": "c6facc2416144378fb9daa51fed1d75a372315bcd1b44a2dee745beed1321171",
+          "complete": true
+        },
+        {
+          "endpoint": "https://data.alpaca.markets/v1beta1/options/snapshots/SPY",
+          "records": 317,
+          "pages": 1,
+          "payload_sha256": "3c60417c2d198da89d04881ef29044e946dfeb103f51d9abff151effaf7abc72",
+          "complete": true
+        }
+      ],
+      "completed_at": "2026-08-31T14:55:23.695114+00:00"
+    },
+    "deployment": {
+      "commit": "d657f2f8a4ba141c683b7b513001bcfc9b32759c",
+      "stopped_at": "2026-08-31T14:57:25.438633+00:00",
+      "restarted_at": "2026-08-31T14:57:44.882663+00:00",
+      "local_tests": {
+        "run": 102,
+        "passed": 102
+      },
+      "vm_tests": {
+        "run": 102,
+        "passed": 101,
+        "skipped": 1,
+        "skip_reason": "Windows-only PowerShell test"
+      },
+      "state_and_journal_preserved": true,
+      "frozen_strategy_risk_clock_executor_files_unchanged": true
+    },
+    "first_post_restart_cycle_at": "2026-08-31T14:57:45.336161+00:00",
+    "verified_at": "2026-08-31T14:58:38.470523+00:00",
+    "post_repair_health": {
+      "at": "2026-08-31T14:58:38.470523+00:00",
+      "commit": "d657f2f8a4ba141c683b7b513001bcfc9b32759c",
+      "service": {
+        "MainPID": "70855",
+        "NRestarts": "0",
+        "ActiveState": "active",
+        "SubState": "running"
+      },
+      "writer_count": 1,
+      "pin_match": true,
+      "equity": 100000,
+      "daily_pnl": 0,
+      "positions": 0,
+      "open_orders": 0,
+      "order_history_count": 0,
+      "order_status_counts": {},
+      "entries": {},
+      "plan_count": 0,
+      "journal_valid": true,
+      "records": 3995,
+      "terminal_hash": "6bbc59962904b424299edfb0130da7b006efef894602c458d94a54ad69b1f7da",
+      "prior_anchor_match": true,
+      "last_age_seconds": 53.1,
+      "post_repair_events": [
+        {
+          "action": "abstain",
+          "entries_this_session": 0,
+          "equity": 100000,
+          "evidence_hash": "",
+          "mode": "paper",
+          "observed_at": "2026-08-31T14:57:45.336161+00:00",
+          "open_plans": 0,
+          "phase": "entry_allowed",
+          "reasons": [
+            "Signal selected the cash/neutral baseline.",
+            "Signal magnitude is below the frozen entry threshold."
+          ]
+        }
+      ]
+    },
+    "official_sources": [
+      "https://docs.alpaca.markets/us/reference/get-options-contracts",
+      "https://docs.alpaca.markets/us/reference/optionchain"
+    ],
+    "retained_diagnostic_failures": [
+      "First staged-import harness attempt hit a circular import before any network call; the harness was corrected.",
+      "A staged proposal probe hit the expected neutral-direction guard after normalization succeeded; the probe was corrected to treat neutral as abstention. No controller logic was changed."
+    ]
+  },
+  "elapsed": {
+    "first_failure_to_verified_seconds": 2200.201409,
+    "detected_to_verified_seconds": 1478.65912,
+    "service_pause_seconds": 19.44403
+  },
+  "impact": "New-entry evaluations were repeatedly refused on incomplete options metadata. No broker orders, positions, or P&L change were observed through recovery. Forgone trading opportunity cannot be measured from this evidence.",
+  "decision": "Deploy complete contracts and snapshots pagination; retain all frozen strategy, risk, account, ownership, and time gates.",
+  "claim_ceiling": "C1 regression mechanics; C2 authenticated current data-path recovery and operational observation; C0 alpha and probability of winning",
+  "falsifier": "Pagination remains incomplete, any page is silently dropped, strategy/risk/clock hashes change, account identity diverges, journal continuity breaks, or broker state becomes unexplained",
+  "cost_risk_budget": "No new resources, paid feeds, credential changes, or manual orders. GET-only diagnosis and one named-runner stop/start; hard data bounds: 10 pages, 10000 records, 20-second acceptance budget per options dataset.",
+  "stop_rule": "Repair verified. Continue the existing hourly monitor and Thursday extras; do not tune thresholds using competition outcomes."
+}

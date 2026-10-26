@@ -3,6 +3,12 @@
 Post only after the public GitHub, demo, and video links are final. Replace placeholders and obtain
 owner confirmation at action time.
 
+August 31 update for all drafts: the public demo now includes a timestamped operational snapshot
+and the pagination-incident report. Say that the data-loading defect was repaired without changing
+risk or strategy; do not imply that recovery proves profit. If mentioning elapsed time, use
+36m 40s from first logged failure to verified recovery. Refresh results after Thursday EOD before
+publishing; these are drafts, not sent posts.
+
 ## X / Twitter
 
 Most trading agents explain why they traded. We built one that can prove why it refused.

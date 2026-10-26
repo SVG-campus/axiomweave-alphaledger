@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-08-31T15:16:24.699669+00:00",
+  "question": "Did the paper-only pagination repair and synchronized public resources pass scoped verification?",
+  "repair_commit": "d657f2f8a4ba141c683b7b513001bcfc9b32759c",
+  "local_tests": {"run": 102, "passed": 102, "generated_at": "2026-08-31T15:15:49.601202+00:00"},
+  "paper_runner_followup": {
+    "active": true,
+    "writer_count": 1,
+    "account_pin_matches": true,
+    "equity_usd": 100000,
+    "daily_pnl_usd": 0,
+    "order_history_count": 0,
+    "positions_count": 0,
+    "open_orders_count": 0,
+    "post_repair_cycles": 19,
+    "post_repair_actions": "19 neutral-signal abstentions; no options-pagination error",
+    "journal_records": 4013,
+    "journal_valid": true,
+    "prior_anchor_matches": true,
+    "terminal_hash": "382e86cb68fe6bdb5efc4d4722b8d722602646eeec8cb4f82638fd150becbf8f",
+    "last_receipt_age_seconds": 24.2
+  },
+  "presentation": {
+    "slides": 10,
+    "original_preserved": true,
+    "source_theme_bytes_preserved": true,
+    "theme_sha256": "8b500abccb3a86061340d95e2edfe2ca62da665f2741801d8790930dba1507a0",
+    "empty_placeholders": 0,
+    "template_fidelity": "pass, zero reported issues; package ZIP checks separately performed with Windows .NET because unzip was unavailable",
+    "visual_review": "All ten final slide renders and ten corresponding Poppler PDF page renders inspected; slide-eight multiline replacement corrected before delivery",
+    "pdf_pages": 10,
+    "pdf_page_size_points": [960, 540],
+    "pdf_format": "image-based reviewed slides; editable text and speaker notes in separate PPTX",
+    "runtime_fallbacks": ["Unavailable unzip helper replaced only for read-only ZIP QA by Windows .NET", "Unavailable PyMuPDF import replaced by bundled Poppler PDF rendering"],
+    "not_completed_by_artifacts": ["video recording", "YouTube upload", "LabLab final submission", "Thursday EOD results"]
+  },
+  "monitoring": {
+    "id": "monitor-alphaledger-market-hours",
+    "status": "ACTIVE",
+    "recurrence_preserved": true,
+    "repair_authority": "One scoped tested repair cycle with exact-account/state reconciliation and unchanged frozen policy; no manual broker orders",
+    "resource_sync": "After material changes and Thursday final reconciliation; routine healthy checks do not rebuild slides",
+    "local_requirement": "Computer powered on and desktop app running for local scheduled checks; GCP runner itself is independent"
+  },
+  "claim_ceiling": "C1 software and presentation mechanics; C2 timestamped authenticated paper observations; C0 future profit or winning probability",
+  "falsifiers": ["Any unexplained account exposure", "Second writer", "Invalid journal chain", "Changed frozen risk or clock", "Public resource includes private broker identifiers or secrets", "Published files differ from reviewed artifact hashes"],
+  "risk_budget": "Existing AlphaLedger resources only; no new infrastructure, strategy promotion, risk increase or manual broker mutation",
+  "stop_rule": "Stop further mutations and report any failed reconciliation, recurrent defect after one repair, private-data exposure or verification mismatch"
+}

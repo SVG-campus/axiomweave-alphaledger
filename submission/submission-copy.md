@@ -48,6 +48,15 @@ $100,000 paper account, uses Alpaca's official CLI, and requires an explicit hum
 before paper-order mode can start. AlphaLedger's wedge is decision provenance for autonomous
 finance: proof before profit.
 
+## Operational evidence update — August 31
+
+The paper runner is active on GCP. On August 31, an incomplete options-contract catalog caused
+repeated abstentions. We repaired bounded pagination, ran 102 local tests and the VM suite, and
+preserved the incident's full timeline: 36 minutes 40 seconds from first logged failure to verified
+recovery. No orders or account loss were observed through recovery. This is operational evidence,
+not proof of profitability. The public demo labels its account metrics as a timestamped snapshot;
+final competition results will be reconciled against Thursday EOD equity.
+
 ## Technologies
 
 - Python

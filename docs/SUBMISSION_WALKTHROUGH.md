@@ -17,6 +17,8 @@
 4. Change only to **Stale option evidence**; show ABSTAIN and the missing order plan.
 5. Open **Evidence ledger**; show both receipts and VERIFIED chain status.
 6. Close with the one-page architecture and the C0/C1/C2 claim boundary.
+7. Show the timestamped operational snapshot and preserved pagination incident if asked about
+   deployment reliability. Use the current dated deck listed in `submission/PRESENTATION_STATUS.md`.
 
 ## LabLab form order
 

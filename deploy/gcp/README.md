@@ -4,12 +4,17 @@ Target project: `project-757198e6-df23-4e75-b08`. The read-only inventory on 202
 Compute Engine VMs, Cloud Run was disabled, Secret Manager was disabled, and only the default
 Compute service account existed. The scripts use only new `alphaledger-*` names.
 
-Current deployment: `alphaledger-hackathon-20260828` is serving the credential-free demo at
-<http://34.27.11.180> from public commit
-`5a97562ee4f710e7fa7d9a9f15033fe1c1d3f6af`. The runner is active in GET-only `observe` mode
-after successful reconciliation of the fresh $100,000 Level-3 account with zero positions and
-orders. The paper-enable flag is absent, and each of the three secret containers has exactly one
-enabled version.
+Current verified runner (August 31, 07:58:38 Pacific): `alphaledger-hackathon-20260828`
+is active in authorized `paper` mode with the paper-enable flag present. Pagination repair commit
+`d657f2f8a4ba141c683b7b513001bcfc9b32759c` passed 102 local tests and 101 VM tests (one
+Windows-only skip). Exact-account reconciliation showed $100,000 equity, zero orders and positions,
+and one writer. Its first repaired cycle abstained on a neutral signal. See the timestamped
+[incident receipt](../../evidence/incidents/2026-08-31-options-pagination.json) and
+[public snapshot](../../evidence/public-operation-status.json); these are not live-account feeds.
+The credential-free demo remains at <http://34.27.11.180>.
+
+`evidence/deployment-receipt.json` is the preserved August 28 GET-only deployment receipt, not the
+current activation state. Documentation/demo-only refreshes must not restart a healthy trader.
 
 ## Architecture
 

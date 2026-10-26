@@ -64,14 +64,15 @@ minutes and file size under 300 MB.
 > policy, advisory, recomputed economics, account state, broker action, and previous hash. Change an
 > earlier entry and verification fails.
 
-## 3:20–3:55 — Evidence honesty
+## 3:20–3:55 — Evidence honesty and the real incident
 
 **On screen:** Evaluation / evidence slide.
 
-> The verified suite establishes C1 deterministic mechanics on frozen and Alpaca-shaped inputs.
-> Authenticated organizer screenshots establish C2 timing evidence. Profitability, future fills,
-> broker mark construction, and competition rank remain C0. We preserve the failed hourly and five-minute
-> tests rather than tuning them away.
+> All 102 local tests passed, but tests are not profit. On Monday our reader encountered more than
+> one thousand option contracts and stopped at the first page. The agent refused to trade. We fixed
+> complete pagination and verified recovery thirty-six minutes and forty seconds after the first
+> logged failure. No orders or account loss were observed through recovery. We kept the failure,
+> the repair, and the failed signal benchmarks in the evidence record.
 
 ## 3:55–4:20 — Business value
 
@@ -89,6 +90,10 @@ minutes and file size under 300 MB.
 > falsifier.
 
 ## Recording checklist
+
+- Use the dated August 31 deck and PDF in `PRESENTATION_STATUS.md`, not the older prototype deck.
+- At final recording, update this incident's follow-up and the Thursday EOD result from verified
+  evidence. Do not narrate the recovery snapshot as the current or final P&L.
 
 - Restart if any secret, account identifier, notification, or personal tab appears.
 - Keep the dashboard at 100% zoom and enlarge the pointer.

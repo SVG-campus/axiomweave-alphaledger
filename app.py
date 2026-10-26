@@ -98,7 +98,7 @@ with competition_tab:
     phase = window.phase_at(now_utc)
     st.subheader("Four sessions. One writer. Every action proven.")
     st.caption(
-        "The public panel is clock-and-policy only. It has no Alpaca credentials, no account ID, "
+        "The public panel shows policy and a timestamped, redacted operational snapshot. It has no Alpaca credentials, no account ID, "
         "no broker adapter, and no private runtime journal."
     )
     cm1, cm2, cm3, cm4 = st.columns(4)
@@ -106,6 +106,28 @@ with competition_tab:
     cm2.metric("New entries", "10:20–14:30 ET")
     cm3.metric("Max plan loss", f"${competition_policy.max_loss_per_plan_usd:,.0f}")
     cm4.metric("Default flat", "Thu 15:45 ET")
+
+    status_path = ROOT / "evidence" / "public-operation-status.json"
+    if status_path.exists():
+        public_status = json.loads(status_path.read_text(encoding="utf-8"))
+        st.markdown("#### Verified operational snapshot")
+        st.caption(
+            f"Captured {public_status['observed_at']} · {public_status['disclosure']}"
+        )
+        sm1, sm2, sm3, sm4 = st.columns(4)
+        sm1.metric("Paper equity", f"${public_status['equity_usd']:,.2f}")
+        sm2.metric("Snapshot daily P&L", f"${public_status['daily_pnl_usd']:,.2f}")
+        sm3.metric("Orders to date", public_status["orders_to_date"])
+        sm4.metric("Local tests passed", public_status["local_tests_passed"])
+        st.write(f"Last controller action: {public_status['last_action']}. {public_status['last_reason']}")
+        st.info(
+            "Aug 31 incident: incomplete options-contract pagination blocked entries. "
+            "Complete bounded pagination was deployed; the repair and elapsed time are preserved. "
+            "Strategy and risk limits were unchanged."
+        )
+        st.markdown(
+            "[Incident timeline and verification](https://github.com/SVG-campus/axiomweave-alphaledger/blob/main/docs/INCIDENT_2026-08-31_PAGINATION.md)"
+        )
 
     left, right = st.columns([1.15, 0.85], gap="large")
     with left:

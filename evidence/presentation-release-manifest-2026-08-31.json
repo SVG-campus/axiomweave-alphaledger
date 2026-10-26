@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-31",
+  "source_repair_commit": "d657f2f8a4ba141c683b7b513001bcfc9b32759c",
+  "artifacts": [
+    {"path": "submission/AxiomWeave-AlphaLedger-Hackathon-Pitch-2026-08-31.pptx", "bytes": 2074977, "sha256": "1e7477fcd2be2f28098e264203308f8637bcc52dcc855d583a620ffec2e5851b", "role": "editable current presentation with source notes"},
+    {"path": "submission/AxiomWeave-AlphaLedger-Hackathon-Pitch-2026-08-31.pdf", "bytes": 4037283, "sha256": "d46e8909df920e49989a54e3a697184057a296bbbe9addc3bbdccad78212a473", "role": "matching reviewed slide PDF"}
+  ],
+  "verification": "evidence/resource-update-verification-2026-08-31.json",
+  "incident": "evidence/incidents/2026-08-31-options-pagination.json",
+  "public_safety_review": "Redacted paper-equity observations only; no account number, broker/client order ID, API key/secret, raw private journal, or private Discord screenshot included",
+  "limitations": "Interim August 31 operational update; not Thursday final performance, a recorded video, or a submitted entry"
+}
